@@ -1,0 +1,137 @@
+[{
+  "effective_query": "",
+  "id": "1",
+  "no_results": "False",
+  "num_results": "11",
+  "num_results_for_query": "About 11,200,000 results (0.38 seconds)\u00a0",
+  "page_number": "1",
+  "query": "software OR engineer OR developer \"healthcare\" \"objective-c\" OR \"swift\" OR \"iOS\"",
+  "requested_at": "2016-10-27 19:32:34.432356",
+  "requested_by": "localhost",
+  "results": [
+    {
+      "domain": "",
+      "id": "1",
+      "link": "/aclk?sa=l&ai=DChcSEwiT39ju3PvPAhXNWYYKHUmfCBgYABAA&sig=AOD64_2S1boV_6MraGKIHIUeRg3U0ldMlA&q=&ved=0ahUKEwiF_NTu3PvPAhXi6YMKHTw-B6UQ0QwIWQ&adurl=",
+      "link_type": "ads_main",
+      "rank": "1",
+      "serp_id": "1",
+      "snippet": "Vetted & Handpicked For Your Needs. Focus On Your Project, Not Hiring.",
+      "title": "",
+      "visible_link": "www.toptal.com/"
+    },
+    {
+      "domain": "www.indeed.com",
+      "id": "2",
+      "link": "http://www.indeed.com/q-Ios-Developer-Healthcare,-Medical-Devices-jobs.html",
+      "link_type": "results",
+      "rank": "1",
+      "serp_id": "1",
+      "snippet": "Jobs 1 - 10 of 59246 - Healthcare, Vision, Dental. IOS development, Swift and/or Objective-C. Be ready to show off y work that displays a high proficiency in iOS\u00a0...",
+      "title": "Ios Developer Healthcare, Medical Devices Jobs, Employment ...",
+      "visible_link": "www.indeed.com/q-Ios-Developer-Healthcare,-Medical-Devices-jobs.html"
+    },
+    {
+      "domain": "ioscorp.com",
+      "id": "3",
+      "link": "http://ioscorp.com/",
+      "link_type": "results",
+      "rank": "2",
+      "serp_id": "1",
+      "snippet": "IOS is your single source for healthcare supply chain software. Manage your inventory intelligently with IOS.",
+      "title": "IOS: healthcare supply chain software",
+      "visible_link": "ioscorp.com/"
+    },
+    {
+      "domain": "www.nowhealthcaregroup.com",
+      "id": "4",
+      "link": "http://www.nowhealthcaregroup.com/career/ios-developer/",
+      "link_type": "results",
+      "rank": "3",
+      "serp_id": "1",
+      "snippet": "We are looking for an iOS Developer who possesses a passion for pushing mobile ... familiarity with Objective-C and Cocoa Touch; Experience working with iOS\u00a0...",
+      "title": "iOS Developer - Now Healthcare Group",
+      "visible_link": "www.nowhealthcaregroup.com/career/ios-developer/"
+    },
+    {
+      "domain": "www.buddyhealthcare.com",
+      "id": "5",
+      "link": "http://www.buddyhealthcare.com/jobs/ios-developer/",
+      "link_type": "results",
+      "rank": "4",
+      "serp_id": "1",
+      "snippet": "As an iOS developer you would be part developing our iOS application using Swift. The app you are developing will be used by hundreds of thousands users.",
+      "title": "iOS Developer - Buddy Healthcare",
+      "visible_link": "www.buddyhealthcare.com \u203a Open jobs"
+    },
+    {
+      "domain": "www.zdnet.com",
+      "id": "6",
+      "link": "http://www.zdnet.com/article/apple-carekit-building-the-future-of-healthcare-one-ios-app-at-a-time/",
+      "link_type": "results",
+      "rank": "5",
+      "serp_id": "1",
+      "snippet": "Jul 12, 2016 - Apple CareKit: Building the future of healthcare, one iOS app at a time ... The aim of CareKit, according to Apple, is to create a software\u00a0...",
+      "title": "Apple CareKit: Building the future of healthcare, one iOS app at a time ...",
+      "visible_link": "www.zdnet.com/.../apple-carekit-building-the-future-of-healthcare-one-ios-app..."
+    },
+    {
+      "domain": "www.quora.com",
+      "id": "7",
+      "link": "https://www.quora.com/If-I-am-building-an-iOS-app-as-a-platform-for-healthcare-which-industry-am-I-in-healthcare-or-software",
+      "link_type": "results",
+      "rank": "6",
+      "serp_id": "1",
+      "snippet": "Both, and then some... (depending on what the product is). There are multiple names that cover ... Your industry code would be software manufacturing - not healthcare. 211 Views \u00b7 View Upvotes \u00b7 Vivek Sriramaiah, Light Hearted Fun Loving\u00a0...",
+      "title": "If I am building an iOS app as a platform for healthcare, which industry ...",
+      "visible_link": "https://www.quora.com/If-I-am-building-an-iOS-app-as-a-platform-for-healthcare..."
+    },
+    {
+      "domain": "medianthealthcare.com",
+      "id": "8",
+      "link": "http://medianthealthcare.com/jobs/healthcare-ios-developer-consultant/",
+      "link_type": "results",
+      "rank": "7",
+      "serp_id": "1",
+      "snippet": "Sep 27, 2016 - An iOS developer is responsible for the development and ... 5+ years of strong experience in iOS framework; Proficient with Swift and Cocoa\u00a0...",
+      "title": "Healthcare iOS Developer Consultant - Mediant Health Resources",
+      "visible_link": "medianthealthcare.com/jobs/healthcare-ios-developer-consultant/"
+    },
+    {
+      "domain": "www.computerworld.com",
+      "id": "9",
+      "link": "http://www.computerworld.com/article/2998177/healthcare-it/iphones-may-revolutionize-healthcare-says-ios-developer.html",
+      "link_type": "results",
+      "rank": "8",
+      "serp_id": "1",
+      "snippet": "Oct 27, 2015 - The developers behind the popular Argus iOS health app believe we've only begun to explore the potential of mobile tech to transform\u00a0...",
+      "title": "iPhones may 'revolutionize' healthcare, says iOS developer ...",
+      "visible_link": "www.computerworld.com/.../healthcare.../iphones-may-revolutionize-..."
+    },
+    {
+      "domain": "www.dice.com",
+      "id": "10",
+      "link": "https://www.dice.com/jobs/q-Senior_iOS_Developer%26%2345Healthcare_Technology_Company-dsj-true-l-94401-radius-30-jobs.html",
+      "link_type": "results",
+      "rank": "9",
+      "serp_id": "1",
+      "snippet": "Senior IOS Engineer - Global leader in... Minimum Required Skills: iOS, Objective -C, SWIFT, UIKit, Cocoa, Cocoa Touch, Core Foundation, ObjectiveC, iOS.",
+      "title": "Senior iOS Developer-Healthcare Technology Company jobs in ...",
+      "visible_link": "https://www.dice.com/.../q-Senior_iOS_Developer%26%2345Healthcare_Tech..."
+    },
+    {
+      "domain": "www.glassdoor.com",
+      "id": "11",
+      "link": "https://www.glassdoor.com/Jobs/HealthTap-developer-healthcare-ios-Jobs-EI_IE453567.0,9_KO10,34.htm",
+      "link_type": "results",
+      "rank": "10",
+      "serp_id": "1",
+      "snippet": "HealthTap Developer healthcare ios Jobs. Hiring? Post a Job. Job Title. City, State or ... Software Engineer salaries ($84k) \u00b7 Intern jobs \u00b7 Intern salaries ($33k).",
+      "title": "HealthTap Developer healthcare ios Jobs | Glassdoor",
+      "visible_link": "https://www.glassdoor.com/.../HealthTap-developer-healthcare-ios-Jobs-EI_..."
+    }
+  ],
+  "scrape_method": "http",
+  "search_engine_name": "google",
+  "status": "successful"
+}]
