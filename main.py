@@ -1,13 +1,17 @@
 from flask import Flask
 import controllers
-
-app = Flask(__name__, template_folder = 'views')
+from config import app
+from flask_mysqldb import MySQL
 
 app.register_blueprint(controllers.pref)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    cur = app.mysql.connection.cursor()
+    cur.execute("SHOW TABLES;")
+    rv = cur.fetchall()
+    cur.close()
+    return str(rv)
 
 if __name__ == "__main__":
     app.run()
