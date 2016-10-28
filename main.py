@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import render_template
 import controllers
 from config import app
 from flask_mysqldb import MySQL
@@ -11,7 +12,8 @@ def hello_world():
     cur.execute("SHOW TABLES;")
     rv = cur.fetchall()
     cur.close()
-    return str(rv)
+    # return str(rv)
+    return render_template('index.html')
 
 if __name__ == "__main__":
     app.run()
