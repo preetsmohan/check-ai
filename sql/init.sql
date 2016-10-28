@@ -1,4 +1,6 @@
-DROP checkai;
+DROP DATABASE IF EXISTS checkai;
 CREATE DATABASE checkai;
+
+USE checkai;
 
 CREATE TABLE user (uid INT NOT NULL AUTO_INCREMENT, name VARCHAR(30), field VARCHAR(30), PRIMARY KEY (uid) );

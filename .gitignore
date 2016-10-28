@@ -2,6 +2,8 @@ hello.py
 *.swp
 *.pyc
 ./venv/*
+venv/
+config.py
 
 # Windows image file caches
 Thumbs.db
