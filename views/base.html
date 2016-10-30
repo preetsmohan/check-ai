@@ -38,22 +38,13 @@
         </nav>
     </div>
     <div class="content-div">{% block content %}{% endblock %}</div>
-<!--     <footer class="page-footer blue">
-        <div class="container">
-            <div class="row">
-                <p class="white-text">Check.ai description here.</p>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                &copy; Copyright 2016 Check.ai team
-            </div>
-        </div>
-    </footer> -->
+
     <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
     <!-- materialize js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+    {% block javascript %}{% endblock %}
 </body>
 </html>
