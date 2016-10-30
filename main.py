@@ -1,12 +1,11 @@
 from flask import Flask
-import re
-import os
-import sys
-import json
+import checkai_scraper as scraper
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-	
- 	return 'Hello, World!'
+	results = scraper.scrape('hello')
+	print("hi")
+	print(results)
+	return "Hello"
