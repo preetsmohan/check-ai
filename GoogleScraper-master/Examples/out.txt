@@ -1,0 +1,188 @@
+{'effective_query': '',
+ 'id': '7',
+ 'no_results': 'False',
+ 'num_results': '13',
+ 'num_results_for_query': 'About 11,200,000 results (0.60 seconds)\xa0',
+ 'page_number': '1',
+ 'query': 'software OR engineer OR developer "healthcare" "objective-c" OR '
+          '"swift" OR "iOS"',
+ 'requested_at': '2016-10-27 19:17:21.584563',
+ 'requested_by': 'localhost',
+ 'results': [{'domain': 'www.indeed.com',
+              'id': '60',
+              'link': 'http://www.indeed.com/q-Ios-Developer-Healthcare,-Medical-Devices-jobs.html',
+              'link_type': 'results',
+              'rank': '1',
+              'serp_id': '7',
+              'snippet': 'Jobs 1 - 10 of 59246 - Healthcare, Vision, '
+                         'Dental. IOS development, Swift and/or '
+                         'Objective-C. Be ready to show off y work that '
+                         'displays a high proficiency in iOS\xa0...',
+              'title': 'Ios Developer Healthcare, Medical Devices Jobs, '
+                       'Employment ...',
+              'visible_link': 'www.indeed.com/q-Ios-Developer-Healthcare,-Medical-Devi...'},
+             {'domain': 'ioscorp.com',
+              'id': '61',
+              'link': 'http://ioscorp.com/',
+              'link_type': 'results',
+              'rank': '2',
+              'serp_id': '7',
+              'snippet': 'IOS is your single source for healthcare supply '
+                         'chain software. Manage your inventory '
+                         'intelligently with IOS.',
+              'title': 'IOS: healthcare supply chain software',
+              'visible_link': 'ioscorp.com/'},
+             {'domain': 'www.nowhealthcaregroup.com',
+              'id': '62',
+              'link': 'http://www.nowhealthcaregroup.com/career/ios-developer/',
+              'link_type': 'results',
+              'rank': '3',
+              'serp_id': '7',
+              'snippet': 'We are looking for an iOS Developer who '
+                         'possesses a passion for pushing mobile ... '
+                         'familiarity with Objective-C and Cocoa Touch; '
+                         'Experience working with iOS\xa0...',
+              'title': 'iOS Developer - Now Healthcare Group',
+              'visible_link': 'www.nowhealthcaregroup.com/career/ios-developer/'},
+             {'domain': 'www.buddyhealthcare.com',
+              'id': '63',
+              'link': 'http://www.buddyhealthcare.com/jobs/ios-developer/',
+              'link_type': 'results',
+              'rank': '4',
+              'serp_id': '7',
+              'snippet': 'As an iOS developer you would be part developing '
+                         'our iOS application using Swift. The app you are '
+                         'developing will be used by hundreds of thousands '
+                         'users.',
+              'title': 'iOS Developer - Buddy Healthcare',
+              'visible_link': 'www.buddyhealthcare.com › Open jobs'},
+             {'domain': 'www.zdnet.com',
+              'id': '64',
+              'link': 'http://www.zdnet.com/article/apple-carekit-building-the-future-of-healthcare-one-ios-app-at-a-time/',
+              'link_type': 'results',
+              'rank': '5',
+              'serp_id': '7',
+              'snippet': 'Jul 12, 2016 - Apple CareKit: Building the '
+                         'future of healthcare, one iOS app at a time ... '
+                         'The aim of CareKit, according to Apple, is to '
+                         'create a software\xa0...',
+              'title': 'Apple CareKit: Building the future of healthcare, '
+                       'one iOS app at a time ...',
+              'visible_link': 'www.zdnet.com/.../apple-carekit-building-the-future-of-healthcare...'},
+             {'domain': 'www.quora.com',
+              'id': '65',
+              'link': 'https://www.quora.com/If-I-am-building-an-iOS-app-as-a-platform-for-healthcare-which-industry-am-I-in-healthcare-or-software',
+              'link_type': 'results',
+              'rank': '6',
+              'serp_id': '7',
+              'snippet': 'Both, and then some... (depending on what the '
+                         'product is). There are multiple names that cover '
+                         '... Your industry code would be software '
+                         'manufacturing - not healthcare. 211 Views · View '
+                         'Upvotes · Vivek Sriramaiah, Light Hearted Fun '
+                         'Loving\xa0...',
+              'title': 'If I am building an iOS app as a platform for '
+                       'healthcare, which industry ...',
+              'visible_link': 'https://www.quora.com/If-I-am-building-an-iOS-app-as-a-platform-f...'},
+             {'domain': 'medianthealthcare.com',
+              'id': '66',
+              'link': 'http://medianthealthcare.com/jobs/healthcare-ios-developer-consultant/',
+              'link_type': 'results',
+              'rank': '7',
+              'serp_id': '7',
+              'snippet': 'Sep 27, 2016 - An iOS developer is responsible '
+                         'for the development and ... 5+ years of strong '
+                         'experience in iOS framework; Proficient with '
+                         'Swift and Cocoa\xa0...',
+              'title': 'Healthcare iOS Developer Consultant - Mediant '
+                       'Health Resources',
+              'visible_link': 'medianthealthcare.com/jobs/healthcare-ios-developer-consultant/'},
+             {'domain': 'www.computerworld.com',
+              'id': '67',
+              'link': 'http://www.computerworld.com/article/2998177/healthcare-it/iphones-may-revolutionize-healthcare-says-ios-developer.html',
+              'link_type': 'results',
+              'rank': '8',
+              'serp_id': '7',
+              'snippet': 'Oct 27, 2015 - The developers behind the popular '
+                         "Argus iOS health app believe we've only begun to "
+                         'explore the potential of mobile tech to '
+                         'transform\xa0...',
+              'title': "iPhones may 'revolutionize' healthcare, says iOS "
+                       'developer ...',
+              'visible_link': 'www.computerworld.com/.../healthcare.../iphones-may-r...'},
+             {'domain': 'www.dice.com',
+              'id': '68',
+              'link': 'https://www.dice.com/jobs/q-Senior_iOS_Developer%26%2345Healthcare_Technology_Company-dsj-true-l-94401-radius-30-jobs.html',
+              'link_type': 'results',
+              'rank': '9',
+              'serp_id': '7',
+              'snippet': 'Senior IOS Engineer - Global leader in... '
+                         'Minimum Required Skills: iOS, Objective-C, '
+                         'SWIFT, UIKit, Cocoa, Cocoa Touch, Core '
+                         'Foundation, ObjectiveC, iOS.',
+              'title': 'Senior iOS Developer-Healthcare Technology Company '
+                       'jobs in ...',
+              'visible_link': 'https://www.dice.com/.../q-Senior_iOS_Developer%26%2345Heal...'},
+             {'domain': 'www.glassdoor.com',
+              'id': '69',
+              'link': 'https://www.glassdoor.com/Jobs/HealthTap-developer-healthcare-ios-Jobs-EI_IE453567.0,9_KO10,34.htm',
+              'link_type': 'results',
+              'rank': '10',
+              'serp_id': '7',
+              'snippet': 'HealthTap Developer healthcare ios Jobs. Hiring? '
+                         'Post a Job. Job Title. City, State or ... '
+                         'Software Engineer salaries ($84k) · Intern jobs '
+                         '· Intern salaries ($33k).',
+              'title': 'HealthTap Developer healthcare ios Jobs | Glassdoor',
+              'visible_link': 'https://www.glassdoor.com/.../HealthTap-developer-healthcare-...'},
+             {'domain': '',
+              'id': '70',
+              'link': '/aclk?sa=l&ai=DChcSEwjez9a72fvPAhWTWoYKHXdMBNIYABAA&sig=AOD64_3mywPRefUwVifr0HgXjaUKXfT-TQ&q=&ved=0ahUKEwjM0NG72fvPAhXjyoMKHV3lAJ4Q0QwIGg&adurl=',
+              'link_type': 'ads_main',
+              'rank': '1',
+              'serp_id': '7',
+              'snippet': 'Vetted & Handpicked For Your Needs. Focus On '
+                         'Your Project, Not Hiring.',
+              'title': '',
+              'visible_link': 'www.toptal.com/'},
+             {'domain': '',
+              'id': '71',
+              'link': '/aclk?sa=L&ai=DChcSEwjez9a72fvPAhWTWoYKHXdMBNIYABAF&sig=AOD64_2tss0P6oXorEkFJFE9eU6-9r_YqA&q=&ved=0ahUKEwjM0NG72fvPAhXjyoMKHV3lAJ4Q0QwIJg&adurl=',
+              'link_type': 'ads_main',
+              'rank': '2',
+              'serp_id': '7',
+              'snippet': 'Simplify App Development Today. Learn More About '
+                         'IBM Bluemix Runtime for Swift.',
+              'title': '',
+              'visible_link': 'developer.ibm.com/swift'},
+             {'domain': '',
+              'id': '72',
+              'link': '/aclk?sa=l&ai=DChcSEwjez9a72fvPAhWTWoYKHXdMBNIYABAK&sig=AOD64_3db-Yb1dN2oJa0FiN6qggFhOZirg&q=&ved=0ahUKEwjM0NG72fvPAhXjyoMKHV3lAJ4Q0QwIbg&adurl=',
+              'link_type': 'ads_main',
+              'rank': '3',
+              'serp_id': '7',
+              'snippet': 'EMR, Medical Billing, Mobile & More',
+              'title': '',
+              'visible_link': 'www.chetu.com/HealthcareSoftware'}],
+ 'scrape_method': 'selenium',
+ 'search_engine_name': 'google',
+ 'status': 'successful'}
+[92m1/1 keywords processed.[0m<SERP[google] has [13] link results for query "software OR engineer OR developer "healthcare" "objective-c" OR "swift" OR "iOS"">
+google
+selenium
+1
+2016-10-27 19:17:21.584563
+13
+<Link at rank 1 has url: http://www.indeed.com/q-Ios-Developer-Healthcare,-Medical-Devices-jobs.html>
+<Link at rank 2 has url: http://ioscorp.com/>
+<Link at rank 3 has url: http://www.nowhealthcaregroup.com/career/ios-developer/>
+<Link at rank 4 has url: http://www.buddyhealthcare.com/jobs/ios-developer/>
+<Link at rank 5 has url: http://www.zdnet.com/article/apple-carekit-building-the-future-of-healthcare-one-ios-app-at-a-time/>
+<Link at rank 6 has url: https://www.quora.com/If-I-am-building-an-iOS-app-as-a-platform-for-healthcare-which-industry-am-I-in-healthcare-or-software>
+<Link at rank 7 has url: http://medianthealthcare.com/jobs/healthcare-ios-developer-consultant/>
+<Link at rank 8 has url: http://www.computerworld.com/article/2998177/healthcare-it/iphones-may-revolutionize-healthcare-says-ios-developer.html>
+<Link at rank 9 has url: https://www.dice.com/jobs/q-Senior_iOS_Developer%26%2345Healthcare_Technology_Company-dsj-true-l-94401-radius-30-jobs.html>
+<Link at rank 10 has url: https://www.glassdoor.com/Jobs/HealthTap-developer-healthcare-ios-Jobs-EI_IE453567.0,9_KO10,34.htm>
+<Link at rank 1 has url: /aclk?sa=l&ai=DChcSEwjez9a72fvPAhWTWoYKHXdMBNIYABAA&sig=AOD64_3mywPRefUwVifr0HgXjaUKXfT-TQ&q=&ved=0ahUKEwjM0NG72fvPAhXjyoMKHV3lAJ4Q0QwIGg&adurl=>
+<Link at rank 2 has url: /aclk?sa=L&ai=DChcSEwjez9a72fvPAhWTWoYKHXdMBNIYABAF&sig=AOD64_2tss0P6oXorEkFJFE9eU6-9r_YqA&q=&ved=0ahUKEwjM0NG72fvPAhXjyoMKHV3lAJ4Q0QwIJg&adurl=>
+<Link at rank 3 has url: /aclk?sa=l&ai=DChcSEwjez9a72fvPAhWTWoYKHXdMBNIYABAK&sig=AOD64_3db-Yb1dN2oJa0FiN6qggFhOZirg&q=&ved=0ahUKEwjM0NG72fvPAhXjyoMKHV3lAJ4Q0QwIbg&adurl=>
