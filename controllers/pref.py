@@ -1,6 +1,8 @@
 from flask import *
 from config import app
 pref = Blueprint('pref', __name__, template_folder = 'views')
+#Exclusions, Skills, Position-type (PM, software dev), Field (AI, Medicine, sports), Experience Level
+
 
 @pref.route('/preferences', methods = ['GET'])
 def pref_route_get():
