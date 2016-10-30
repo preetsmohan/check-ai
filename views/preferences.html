@@ -1,10 +1,15 @@
-<!DOCTYPE HTML>
-<html>
-<script type=text/javascript src="/static/addInput.js"></script>
+{% extends "base.html" %}
+{% block title %}Check.ai - Preferences{% endblock %}
+{% block head %}
+{{ super() }}
+<!-- Insert other stuff that goes in head here -->
+{% endblock %}
+{% block content %}
 
 <h1>Preferences</h1>
 
 <form method="POST">
+	<h5>Skills</h5>
     <fieldset>
     <div id="skillz">
         <div>
@@ -14,6 +19,7 @@
     </fieldset>
     <input type="button" value="+" onClick = "addInputs('skillz', 'text');">
 
+	<h5>Exclusions</h5>
     <fieldset>
     <div id = "exclusions">
         <div>
@@ -21,26 +27,34 @@
         </div>
     </div>
     </fieldset>
+    <input type="button" value="+" onClick = "addInputs('exclusions', 'text');">
     
+	<h5>Position Types</h5>
     <fieldset>
     <div id = "postype">
         <div>
-        <input type="text" name="exclusions">
+        <input type="text" name="postype">
         </div>
     </div>
     </fieldset>
+    <input type="button" value="+" onClick = "addInputs('postype', 'text');">
     
+	<h5>Fields</h5>
     <fieldset>
     <div id = "fields">
         <div>
-        <input type="text" name="exclusions">
+        <input type="text" name="fields">
         </div>
     </div>
     </fieldset>
     
-    <input type="button" value="+" onClick = "addInputs('exclusions', 'text');">    
+    <input type="button" value="+" onClick = "addInputs('fields', 'text');">    
     
     <input type="submit" value="Update Preferences">
 </form>
 
-</html>
+{% endblock %}
+
+{% block javascript %}
+	<script type=text/javascript src="/static/addInput.js"></script>
+{% endblock %}
