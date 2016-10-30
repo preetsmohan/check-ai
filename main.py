@@ -5,6 +5,7 @@ from config import app
 from flask_mysqldb import MySQL
 
 app.register_blueprint(controllers.pref)
+app.register_blueprint(controllers.login)
 
 @app.route('/')
 def hello_world():
@@ -15,9 +16,6 @@ def hello_world():
     # return str(rv)
     return render_template('index.html')
 
-@app.route('/signup')
-def signup():
-	return render_template('signup.html')
 
 if __name__ == "__main__":
     app.run()
