@@ -63,7 +63,7 @@ def scrape(keyword):
 
 	for sentence in summarizer(parser.document, SENTENCES_COUNT):
 		print(sentence)
-		sentences.append[sentence]
+		sentences.append(sentence)
 	
 	
 	#print(results)

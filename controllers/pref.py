@@ -13,7 +13,7 @@ def pref_route_get():
 @pref.route('/preferences', methods = ['POST'])
 def pref_route_post():
     if request.method == 'POST':
-        print request.form
+        print(request.form)
         hello = request.form.getlist('skillz')
-        print hello
+        print(hello)
     return render_template("preferences.html")
