@@ -7,7 +7,7 @@ from mysql import *
 @pref.route('/preferences', methods = ['GET'])
 def pref_route_get():
     session['username'] = '1'
-    get_pref(app, "SELECT skills, exclusions, postype, field, explevel FROM user WHERE uid = '{0}'", (session['username']))
+    pref_sql(app, "SELECT skills, exclusions, postype, field, explevel FROM user WHERE uid = '{0}'", (session['username']))
     return render_template("preferences.html")
 
 @pref.route('/preferences', methods = ['POST'])
