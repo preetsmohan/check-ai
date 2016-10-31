@@ -16,3 +16,7 @@ def signup_post():
         pref_sql(app, "INSERT INTO user (name, password) VALUES ('{0}', '{1}');", (request.form['full-name'],request.form['password']))
         
         return render_template('signup.html')
+
+@app.route('/login', methods=['GET'])
+def login_get():
+    return render_template('login.html')
