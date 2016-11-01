@@ -1,6 +1,6 @@
 hello.py
 *.swp
-*.pyc
+.pyc
 ./venv/*
 venv/
 config.py
