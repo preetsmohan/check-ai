@@ -59,7 +59,7 @@ class LinkedInParser(object):
             # If URL doesn't load for ANY reason, try again...
             # Quick and dirty solution for 404 returns because of network problems
             # However, this could infinite loop if there's an actual problem
-            return self.loadPage(url, data)
+            return "Error loading this job description"
 
     def loadSoup(self, url, data=None):
         """

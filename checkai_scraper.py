@@ -148,6 +148,7 @@ def scrape(keyword):
 				summary.append(sentence)
 
 			all_summaries.append(summary)
+
 		except Exception as e:
 			all_summaries.append("could not retrieve summary for this posting")
 

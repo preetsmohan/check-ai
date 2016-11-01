@@ -11,6 +11,27 @@ def jobs_route_get():
     cur.execute("SHOW TABLES;")
     rv = cur.fetchall()
     print(str(rv))
-    jobs, summaries, num = scraper.scrape('site:jobs.lever.co/* OR site:boards.greenhouse.io/* OR site:linkedin.com/jobs/view/* OR site:ziprecruiter.com/* software OR engineer OR developer "healthcare technology" OR "medical devices" "technology" "objective-c" OR "swift" OR "iOS" -android ')
+
+    sites = 'site:jobs.lever.co/* OR site:boards.greenhouse.io/* OR site:linkedin.com/jobs/view/* OR site:ziprecruiter.com/* '
+
+    position_type = 'project manager'
+
+    experience_level = "senior"
+
+    field = "finance"
+
+    skills = ["C++", "operating systems", "python"]
+
+    all_skills = '"' + skills[0] + '"'
+    for skill in range(1, len(skills)):
+        all_skills += ' OR ' + '"' + skills[skill] + '"'
+
+    exclusions = 'apple'
+
+    query = sites + position_type + ' "' + experience_level + '"' + ' "' + field + '" ' + all_skills + '-' + exclusions
+    print("QUERY: ", query)
+
+
+    jobs, summaries, num = scraper.scrape(query)
     return render_template("jobs.html", jobs=jobs, summaries=summaries, num=num)
 
