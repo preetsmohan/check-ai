@@ -1,7 +1,0 @@
-lxml
-selenium
-cssselect
-requests
-PyMySql
-sqlalchemy
-aiohttp
