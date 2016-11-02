@@ -12,9 +12,11 @@
 	<h5>Skills</h5>
     <fieldset>
     <div id="skillz">
-        <div>
-        <input type="text" name="skillz">
+	{% for skill in skill_list %}
+	<div>
+		<input type="text" name="skillz" value = {{ skill }}>
         </div>
+	{% endfor %}
     </div>
     </fieldset>
     <input type="button" value="+" onClick = "addInputs('skillz', 'text');">
@@ -22,9 +24,11 @@
 	<h5>Exclusions</h5>
     <fieldset>
     <div id = "exclusions">
-        <div>
-        <input type="text" name="exclusions">
+	{% for exclusion in exclusion_list %}
+	<div>
+		<input type="text" name="exclusions" value = {{ exclusion }}>
         </div>
+	{% endfor %}
     </div>
     </fieldset>
     <input type="button" value="+" onClick = "addInputs('exclusions', 'text');">
@@ -32,9 +36,11 @@
 	<h5>Position Types</h5>
     <fieldset>
     <div id = "postype">
+	{% for postype in postype_list %}
         <div>
-        <input type="text" name="postype">
+		<input type="text" name="postype" value = {{ postype }}>
         </div>
+	{% endfor %}
     </div>
     </fieldset>
     <input type="button" value="+" onClick = "addInputs('postype', 'text');">
@@ -42,9 +48,11 @@
 	<h5>Fields</h5>
     <fieldset>
     <div id = "fields">
+	{% for field in field_list %}
         <div>
-        <input type="text" name="fields">
+		<input type="text" name="fields" value = {{ field }}>
         </div>
+	{% endfor %}
     </div>
     </fieldset>
     

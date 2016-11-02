@@ -15,8 +15,11 @@ def pref_route_get():
         field = results[0][3].split(";")
     
     #Next: Pass the values in a Jinja template to populate the HTML rows.
-
-    return render_template("preferences.html")
+    print(skills)
+    print(exclusions)
+    print(postype)
+    print(field)
+    return render_template("preferences.html", skill_list = skills, exclusion_list = exclusions, postype_list = postype, field_list = field)
 
 @pref.route('/preferences', methods = ['POST'])
 def pref_route_post():
@@ -34,4 +37,4 @@ def pref_route_post():
 
 
     #Probably return a redirect instead of a render, redirect to GET this version of the page.
-    return render_template("preferences.html")
+    return redirect("/preferences")
