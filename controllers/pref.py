@@ -8,10 +8,11 @@ from mysql import *
 def pref_route_get():
     session['username'] = '1'
     results = pref_sql(app, "SELECT skills, exclusions, postype, field, explevel FROM user WHERE uid = '{0}'", (session['username']))
-    skills = results[0][0].split(";")
-    exclusions = results[0][1].split(";")
-    postype = results[0][2].split(";")
-    field = results[0][3].split(";")
+    if len(results): #if we have something in the database
+        skills = results[0][0].split(";")
+        exclusions = results[0][1].split(";")
+        postype = results[0][2].split(";")
+        field = results[0][3].split(";")
     
     #Next: Pass the values in a Jinja template to populate the HTML rows.
 
