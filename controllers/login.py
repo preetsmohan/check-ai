@@ -24,13 +24,14 @@ def login_get():
 @app.route('/login', methods=['POST'])
 def login_post():
     res = pref_sql("SELECT uid, password FROM user WHERE name = '{0}'", (request.form['username'],))
-    if(res not empty):
-        if(res[0][2] == request.form['password']):
+    print(res[0][1])
+    if res:
+        if(res[0][1] == request.form['password']):
             session['username'] = request.form['username']
             session['uid'] = res[0][0]
         else:
-            return "error"
+            return "error - wrong password"
     else:
-        return "error"
+        return "error - username not found"
 
     return render_template('login.html')

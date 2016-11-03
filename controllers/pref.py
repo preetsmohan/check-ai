@@ -6,7 +6,7 @@ from mysql import *
 
 @pref.route('/preferences', methods = ['GET'])
 def pref_route_get():
-    results = pref_sql("SELECT skills, exclusions, postype, field, explevel FROM user WHERE uid = '{0}'", (session['uid']))
+    results = pref_sql("SELECT skills, exclusions, postype, field, explevel FROM user WHERE uid = '{0}'", (session['uid'],))
     
     #init values
     skills = []
