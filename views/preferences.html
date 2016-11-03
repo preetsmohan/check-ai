@@ -6,63 +6,89 @@
 {% endblock %}
 {% block content %}
 
-<h1>Preferences</h1>
-
-<form method="POST">
-	<h5>Skills</h5>
-    <fieldset>
-    <div id="skillz">
-	{% for skill in skill_list %}
-	<div>
-		<input type="text" name="skillz" value = {{ skill }}>
+<div class="container">
+    <h1 class="header light">Preferences</h1>
+    <div class="row">
+        <form method="POST">
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content black-text">
+                        <span class="card-title">Skills</span>
+                        <div id="skillz">
+                            {% for skill in skill_list %}
+                            <div class="input-field">
+                                <input type="text" placeholder='Skill' name="skillz" value = {{ skill }}>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <a href="#" type="button" value="+" onClick = "addInputs('skillz', 'text', 'Skill');">Add skill</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content black-text">
+                        <span class="card-title">Exclusions</span>
+                        <div id="exclusions">
+                            {% for exclusion in exclusion_list %}
+                            <div class="input-field">
+                                <input type="text" placeholder='Exclusion' name="exclusions" value = {{ exclusion }}>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <a href="#" type="button" value="+" onClick = "addInputs('exclusions', 'text', 'Exclusion');">Add exclusion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content black-text">
+                        <span class="card-title">Position Types</span>
+                        <div id="postype">
+                            {% for postype in postype_list %}
+                            <div class="input-field">
+                                <input type="text" placeholder='Position' name="postype" value = {{ postype }}>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <a href="#" type="button" value="+" onClick = "addInputs('postype', 'text', 'Position Type');">Add Position Type</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content black-text">
+                        <span class="card-title">Fields</span>
+                        <div id="fields">
+                            {% for field in field_list %}
+                            <div class="input-field">
+                                <input type="text" placeholder='Field' name="fields" value = {{ field }}>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <a href="#" type="button" value="+" onClick = "addInputs('fields', 'text', 'Field');">Add Field</a>
+                    </div>
+                </div>
+            </div>
         </div>
-	{% endfor %}
+        <div class="row right">
+            <button class="btn waves-effect waves-light blue" type="submit">Update Preferences
+                <i class="material-icons left">update</i>
+            </button>  
+        </form>
     </div>
-    </fieldset>
-    <input type="button" value="+" onClick = "addInputs('skillz', 'text');">
-
-	<h5>Exclusions</h5>
-    <fieldset>
-    <div id = "exclusions">
-	{% for exclusion in exclusion_list %}
-	<div>
-		<input type="text" name="exclusions" value = {{ exclusion }}>
-        </div>
-	{% endfor %}
-    </div>
-    </fieldset>
-    <input type="button" value="+" onClick = "addInputs('exclusions', 'text');">
-    
-	<h5>Position Types</h5>
-    <fieldset>
-    <div id = "postype">
-	{% for postype in postype_list %}
-        <div>
-		<input type="text" name="postype" value = {{ postype }}>
-        </div>
-	{% endfor %}
-    </div>
-    </fieldset>
-    <input type="button" value="+" onClick = "addInputs('postype', 'text');">
-    
-	<h5>Fields</h5>
-    <fieldset>
-    <div id = "fields">
-	{% for field in field_list %}
-        <div>
-		<input type="text" name="fields" value = {{ field }}>
-        </div>
-	{% endfor %}
-    </div>
-    </fieldset>
-    
-    <input type="button" value="+" onClick = "addInputs('fields', 'text');">    
-    
-    <input type="submit" value="Update Preferences">
-</form>
+</div>
 
 {% endblock %}
 
 {% block javascript %}
-	<script type=text/javascript src="/static/addInput.js"></script>
+<script type=text/javascript src="/static/addInput.js"></script>
 {% endblock %}

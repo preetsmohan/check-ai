@@ -2,12 +2,12 @@ var counterText = 2;
 var counterRadioButton = 0;
 var counterCheckBox = 0;
 var counterTextArea = 0;
-function addInputs(divName, inputType){
+function addInputs(divName, inputType, placeholderName){
 	var newdiv = document.createElement('div');
 	switch(inputType) {
 		case 'text':
 			//newdiv.innerHTML = "<input type='text' name='"+ divName + "[" + counterText + "]'>";
-			newdiv.innerHTML = "<input type='text' name='"+ divName + "'>";
+			newdiv.innerHTML = "<input type='text' placeholder='"+placeholderName+"' id='new-skill' name='"+ divName + "'>";
 			counterText++;
 			break;
 		case 'radio':

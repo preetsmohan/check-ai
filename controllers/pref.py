@@ -14,18 +14,18 @@ def pref_route_get():
     exclusions = []
     postype = []
     field = []
-
-    if len(results): #if we have something in the database
+    print(results[0][:4])
+    if len(results) and not None in results[0][:4]: #if we have something in the database
         skills = results[0][0].split(";")
         exclusions = results[0][1].split(";")
         postype = results[0][2].split(";")
         field = results[0][3].split(";")
     
     #Next: Pass the values in a Jinja template to populate the HTML rows.
-    print(skills)
-    print(exclusions)
-    print(postype)
-    print(field)
+    # print(skills)
+    # print(exclusions)
+    # print(postype)
+    # print(field)
     return render_template("preferences.html", skill_list = skills, exclusion_list = exclusions, postype_list = postype, field_list = field)
 
 @pref.route('/preferences', methods = ['POST'])
