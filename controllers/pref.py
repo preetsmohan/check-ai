@@ -39,7 +39,7 @@ def pref_route_post():
     exclusions_serialized = ";".join(map(str, exclusions))
     postype_serialized = ";".join(map(str, postype))
     fields_serialized = ";".join(map(str, fields))
-    pref_sql("UPDATE user SET skills = '{0}', exclusions = '{1}', postype = '{2}', field = '{3}' WHERE uid = '{4}'", (skills_serialized, exclusions_serialized, postype_serialized, fields_serialized, session['username']))
+    pref_sql("UPDATE user SET skills = '{0}', exclusions = '{1}', postype = '{2}', field = '{3}' WHERE uid = '{4}'", (skills_serialized, exclusions_serialized, postype_serialized, fields_serialized, session['uid']))
 
 
     #Probably return a redirect instead of a render, redirect to GET this version of the page.
