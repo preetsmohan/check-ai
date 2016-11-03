@@ -13,11 +13,13 @@ import linkedin_scraper
 from sumy.parsers.html import HtmlParser
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
-from sumy.summarizers.luhn import LuhnSummarizer as Summarizer
+from sumy.summarizers.lsa import LsaSummarizer as Summarizer
 from sumy.nlp.stemmers import Stemmer
 from sumy.utils import get_stop_words
+import unidecode
 
-TOTAL_INDEED = 5
+
+TOTAL_INDEED = 3
 
 LANGUAGE = "english"
 SENTENCES_COUNT = 1
@@ -34,7 +36,6 @@ def linkedin(url):
 
 #http://blog.nycdatascience.com/student-works/project-3-web-scraping-company-data-from-indeed-com-and-dice-com/
 def indeed(url):
-	#print("URL", url)
 	count = 0
 	jobs = []
 	base_url = url
@@ -51,24 +52,23 @@ def indeed(url):
 	base_url = base_url.replace(',', '%2C')
 	
 	#print("BASE URL", base_url)
-	sort_by = 'date'
+	sort_by = ''
 	start_from = '&start='
 	
 	pd.set_option('max_colwidth',500)    # to remove column limit (Otherwise, we'll lose some info)
 
 	for page in range(1,2): # page from 1 to 100 (last page we can scrape is 100)
-
 		try:
 			page = (page-1) * 10  
 			url = "%s%s%s%d" % (base_url, sort_by, start_from, page) # get full url 
-			#print(url)
-			req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'})
+			req = urllib.request.Request(url, headers={'User-Agent': 'Chrome/35.0.1916.47 Safari/537.36'})
 			read = urllib.request.urlopen(req).read()
 	
 			target = Soup(read, "lxml")
 			targetElements = target.findAll('div', attrs={'class' : '  row  result'}) # we're interested in each row (= each job)
 		    	
 			for elem in targetElements:
+				#print("COUNT:", count)
 				if count < TOTAL_INDEED:
 					comp_name = elem.find('span', attrs={'itemprop':'name'}).getText().strip()
 					job_title = elem.find('a', attrs={'class':'turnstileLink'}).attrs['title']
@@ -84,44 +84,52 @@ def indeed(url):
 
 def scrape(keyword):
 # See in the config.cfg file for possible values
+	num_pages = 1
 	config = {
-	    'use_own_ip': 'True',
+	    'use_own_ip': 'False',
 	    'keyword': keyword,
 	    'search_engines': ['google',],
-	    'num_pages_for_keyword': 1,
-	    'scrape_method': 'http',
+	    'num_pages_for_keyword': num_pages,
+	    'scrape_method': 'selenium',
+    	'sel_browser': 'chrome',
 	    'do_caching': 'True',
 	    'output_filename': 'results.json'
 	}
 
-	
 	try:
 	    search = scrape_with_config(config)
 	except GoogleSearchError as e:
 	    print(e)
-	
+
 	with open('results.json') as data_file:    
 		data = json.load(data_file)
 	
 	results = []
 	
-	num_results = int(data[0]["num_results"])
+	for w in range (0, num_pages):
+		num_results = int(data[w]["num_results"])
+		
+		results_dict = data[w]["results"]
+		
+		for i in range(0, num_results):
+			if results_dict[i]["domain"] != "":
+				title = results_dict[i]["title"]
+				link = results_dict[i]["link"]
 	
-	results_dict = data[0]["results"]
-	
-	for i in range(0, num_results):
-		if results_dict[i]["domain"] != "":
-			title = results_dict[i]["title"]
-			link = results_dict[i]["link"]
+				if "indeed" in link:
+					if "resume" not in link:
+						indeed_jobs = indeed(link)
+						for job in indeed_jobs:
+							results.append((job[0], job[1]))
+				elif "linkedin" in link:
+					if "view" in link:
+						loc = title.find(" in ")
+						title = title[:loc]
+						results.append((title, link))
 
-			if "indeed" in link:
-				if "resume" not in link:
-					indeed_jobs = indeed(link)
-					for job in indeed_jobs:
-						results.append((job[0], job[1]))
+				elif "monster" not in link:
+					results.append((title, link)) #it isn't excluding monster from the query?
 
-			else:
-				results.append((title, link))
 
 	all_summaries = []
 	
@@ -145,12 +153,23 @@ def scrape(keyword):
 			summary = []
 
 			for sentence in summarizer(parser.document, SENTENCES_COUNT):
+				sentence = sentence._text
+				if '\\x' in sentence:
+					raise
+				#error_chars = [i for i, letter in enumerate(sentence) if letter == '\\x']
+				#print("ERROR CHARS", error_chars)
+				#for char in error_chars:
+					#sentence = sentence[char:] + sentence[:char + 4]
+
 				summary.append(sentence)
+				#if 'xa0' in sentence:
+					#raise
 
 			all_summaries.append(summary)
 
 		except Exception as e:
-			all_summaries.append("could not retrieve summary for this posting")
+			message = ["Could not retrieve summary for this posting. Please click apply to learn more."]
+			all_summaries.append(message)
 
 	
 	#print(results)

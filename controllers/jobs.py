@@ -12,23 +12,27 @@ def jobs_route_get():
     rv = cur.fetchall()
     print(str(rv))
 
-    sites = 'site:jobs.lever.co/* OR site:boards.greenhouse.io/* OR site:linkedin.com/jobs/view/* OR site:ziprecruiter.com/* '
+    sites = 'site:jobs.*.com/* OR site:careers.*.com/* OR site:*.com/careers/* OR site:*.com/jobs/* OR site:*.org/careers/* OR site:*.org/jobs/* OR site:jobs.lever.co/* OR site:boards.greenhouse.io/* OR site:linkedin.com/jobs/view/* -site:dice.com/* -site:indeed.com/* -site:monster.com/* -site:glassdoor.com/* '
 
-    position_type = 'project manager'
+    position_type = 'Software Engineer'
 
-    experience_level = "senior"
+    experience_level = 'New Grad'
 
-    field = "finance"
+    fields = ["machine learning", "data science"]
 
-    skills = ["C++", "operating systems", "python"]
+    all_fields = fields[0]
+    for field in range(1, len(fields)):
+        all_fields+= ' OR ' + fields[field]
+
+    skills = ["Python", "C++", "Tensorflow"]
 
     all_skills = '"' + skills[0] + '"'
     for skill in range(1, len(skills)):
         all_skills += ' OR ' + '"' + skills[skill] + '"'
 
-    exclusions = 'apple'
+    exclusions = 'Chicago'
 
-    query = sites + position_type + ' "' + experience_level + '"' + ' "' + field + '" ' + all_skills + '-' + exclusions
+    query = sites + position_type + ' "' + experience_level + '"' + ' ' + all_fields + ' ' + all_skills + ' -' + exclusions
     print("QUERY: ", query)
 
 
