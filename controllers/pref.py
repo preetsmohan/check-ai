@@ -6,8 +6,7 @@ from mysql import *
 
 @pref.route('/preferences', methods = ['GET'])
 def pref_route_get():
-    session['username'] = '1'
-    results = pref_sql(app, "SELECT skills, exclusions, postype, field, explevel FROM user WHERE uid = '{0}'", (session['username']))
+    results = pref_sql("SELECT skills, exclusions, postype, field, explevel FROM user WHERE uid = '{0}'", (session['uid']))
     
     #init values
     skills = []
@@ -40,7 +39,7 @@ def pref_route_post():
     exclusions_serialized = ";".join(map(str, exclusions))
     postype_serialized = ";".join(map(str, postype))
     fields_serialized = ";".join(map(str, fields))
-    pref_sql(app, "UPDATE user SET skills = '{0}', exclusions = '{1}', postype = '{2}', field = '{3}' WHERE uid = '{4}'", (skills_serialized, exclusions_serialized, postype_serialized, fields_serialized, session['username']))
+    pref_sql("UPDATE user SET skills = '{0}', exclusions = '{1}', postype = '{2}', field = '{3}' WHERE uid = '{4}'", (skills_serialized, exclusions_serialized, postype_serialized, fields_serialized, session['uid']))
 
 
     #Probably return a redirect instead of a render, redirect to GET this version of the page.
