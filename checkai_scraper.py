@@ -115,6 +115,11 @@ def scrape(keyword):
 			if results_dict[i]["domain"] != "":
 				title = results_dict[i]["title"]
 				link = results_dict[i]["link"]
+
+				if "-" + " " in title:
+				 	loc = title.find("-" + " ")
+				 	if loc >= 0:
+				 		title = title[:loc]
 	
 				if "indeed" in link:
 					if "resume" not in link:
@@ -123,8 +128,9 @@ def scrape(keyword):
 							results.append((job[0], job[1]))
 				elif "linkedin" in link:
 					if "view" in link:
-						loc = title.find(" in ")
-						title = title[:loc]
+						loc = title.find(" " + "in" + " ")
+						if loc >= 0:
+							title = title[:loc + 1]
 						results.append((title, link))
 
 				elif "monster" not in link:
@@ -154,8 +160,8 @@ def scrape(keyword):
 
 			for sentence in summarizer(parser.document, SENTENCES_COUNT):
 				sentence = sentence._text
-				if '\\x' in sentence:
-					raise
+				#if '\\x' in sentence:
+				#	raise
 				#error_chars = [i for i, letter in enumerate(sentence) if letter == '\\x']
 				#print("ERROR CHARS", error_chars)
 				#for char in error_chars:

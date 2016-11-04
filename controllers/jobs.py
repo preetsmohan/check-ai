@@ -18,13 +18,13 @@ def jobs_route_get():
 
     experience_level = 'New Grad'
 
-    fields = ["machine learning", "data science"]
+    fields = ["healthcare", "tech"]
 
     all_fields = fields[0]
     for field in range(1, len(fields)):
         all_fields+= ' OR ' + fields[field]
 
-    skills = ["Python", "C++", "Tensorflow"]
+    skills = ["iOS", "Swift", "Objective-C"]
 
     all_skills = '"' + skills[0] + '"'
     for skill in range(1, len(skills)):
