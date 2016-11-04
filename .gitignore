@@ -5,6 +5,9 @@ hello.py
 venv/
 config.py
 ./__pychache__/
+*.log
+*.db
+*.json
 
 # Windows image file caches
 Thumbs.db
