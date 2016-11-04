@@ -10,13 +10,14 @@ def signup_get():
 
 @app.route('/signup', methods=['POST'])
 def signup_post():
-        print(request.form['full-name'])
+        print(request.form['username'])
         print(request.form['password'])
         print(request.form['confirm-password'])
-        cur = app.mysql.connection.cursor()
-        cur.execute("INSERT INTO user (name, password) VALUES ('{0}', '{1}');".format(request.form['full-name'],request.form['password']))
-        app.mysql.connection.commit()
-        success = login_check(request.form['full-name'], request.form['password'])
+        pref_sql("INSERT INTO user (username, password) VALUES ('{0}', '{1}');", (request.form['username'], request.form['password']))
+        #cur = app.mysql.connection.cursor()
+        #cur.execute("INSERT INTO user (username, password) VALUES ('{0}', '{1}');".format(request.form['username'],request.form['password']))
+        #app.mysql.connection.commit()
+        success = login_check(request.form['username'], request.form['password'])
         if success:
             return redirect('/preferences')
         else:
@@ -35,7 +36,7 @@ def login_post():
         return render_template('login.html')
 
 def login_check(username, password):
-    res = pref_sql("SELECT uid, password FROM user WHERE name = '{0}'", (username,))
+    res = pref_sql("SELECT uid, password FROM user WHERE username = '{0}'", (username,))
     if res:
         print(res[0][1])
         print(password)
