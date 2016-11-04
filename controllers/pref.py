@@ -25,7 +25,7 @@ def pref_route_get():
     # print(exclusions)
     # print(postype)
     # print(field)
-    return render_template("preferences.html", skill_list = skills, exclusion_list = exclusions, postype_list = postype, field_list = field)
+    return render_template("preferences.html", skill_list = skills, exclusion_list = exclusions, postype_list = postype, field_list = field, signedIn=True)
 
 @pref.route('/preferences', methods = ['POST'])
 def pref_route_post():

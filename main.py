@@ -9,18 +9,9 @@ app.secret_key = os.urandom(24)
 app.register_blueprint(controllers.pref)
 app.register_blueprint(controllers.login)
 app.register_blueprint(controllers.jobs)
-
-@app.route('/')
-def hello_world():
-    cur = app.mysql.connection.cursor()
-    cur.execute("SHOW TABLES;")
-    rv = cur.fetchall()
-    cur.close()
-    # return str(rv)
-    return render_template('index.html')
+app.register_blueprint(controllers.index)
 
 
 if __name__ == "__main__":
     app.run()
-
 
