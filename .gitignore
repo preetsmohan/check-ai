@@ -5,8 +5,15 @@ hello.py
 venv/
 config.py
 ./__pychache__/
+<<<<<<< HEAD
 *.db
 results.json
+=======
+*.log
+*.db
+*.json
+
+>>>>>>> dbd7747f5c8d085a912a6a0f7b0ffb9420c256cd
 # Windows image file caches
 Thumbs.db
 ehthumbs.db

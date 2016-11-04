@@ -90,8 +90,8 @@ def scrape(keyword):
 	    'keyword': keyword,
 	    'search_engines': ['google',],
 	    'num_pages_for_keyword': num_pages,
-	    'scrape_method': 'selenium',
-    	'sel_browser': 'chrome',
+	    'scrape_method': 'http',
+    	    'sel_browser': 'phantomjs',
 	    'do_caching': 'True',
 	    'output_filename': 'results.json'
 	}
@@ -174,8 +174,9 @@ def scrape(keyword):
 			all_summaries.append(summary)
 
 		except Exception as e:
-			message = ["Could not retrieve summary for this posting. Please click apply to learn more."]
-			all_summaries.append(message)
+                    message = ["Could not retrieve summary for this posting. Please click apply to learn more."]
+                    print(e)
+                    all_summaries.append(message)
 
 	
 	#print(results)
