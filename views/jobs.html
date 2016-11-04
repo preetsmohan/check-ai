@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Check.ai - Sign Up{% endblock %}
+{% block head %}
+{{ super() }}
+<!-- Insert other stuff that goes in head here -->
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+        {% for i in range (0, num) %}
+            <div class="card">
+                <div class="card-content black-text">
+                    <span class="card-title">{{jobs[i][0]}}</span>
+                    <div class="summary">
+                    	{% for sentence in summaries[i] %}
+                    		<h6>{{sentence}}</h6>
+                    	{% endfor %}
+                    </div>
+                    <a href="{{jobs[i][1]}}">apply</a>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
