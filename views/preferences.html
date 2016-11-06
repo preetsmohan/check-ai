@@ -18,7 +18,7 @@
                             {% for skill in skill_list %}
                             <div class="input-field">
                                 <a class="material-icons prefix" id="skill-{{loop.index}}-label" href="#" onClick="deletePref('skill-{{loop.index}}');">close</a>
-                                <input id="skill-{{loop.index}}" type="text" placeholder='Skill' name="skillz" value = {{ skill }}>
+                                <input id="skill-{{loop.index}}" type="text" placeholder='Skill' name="skillz" value = "{{skill}}">
                             </div>
                             {% endfor %}
                         </div>
@@ -36,7 +36,7 @@
                             {% for exclusion in exclusion_list %}
                             <div class="input-field">
                                 <a class="material-icons prefix" id="exclusion-{{loop.index}}-label" href="#" onClick="deletePref('exclusion-{{loop.index}}');">close</a>
-                                <input id="exclusion-{{loop.index}}" type="text" placeholder='Exclusion' name="exclusions" value = {{ exclusion }}>
+                                <input id="exclusion-{{loop.index}}" type="text" placeholder='Exclusion' name="exclusions" value = "{{exclusion}}" >
                             </div>
                             {% endfor %}
                         </div>
@@ -54,7 +54,7 @@
                             {% for postype in postype_list %}
                             <div class="input-field">
                                 <a class="material-icons prefix" id="postype-{{loop.index}}-label" href="#" onClick="deletePref('postype-{{loop.index}}');">close</a>
-                                <input id="postype-{{loop.index}}" type="text" placeholder='Position' name="postype" value = {{ postype }}>
+                                <input id="postype-{{loop.index}}" type="text" placeholder='Position' name="postype" value = "{{postype}}" >
                             </div>
                             {% endfor %}
                         </div>
@@ -72,7 +72,7 @@
                             {% for field in field_list %}
                             <div class="input-field">
                                 <a class="material-icons prefix" id="field-{{loop.index}}-label" href="#" onClick="deletePref('field-{{loop.index}}');">close</a>
-                                <input id="field-{{loop.index}}" type="text" placeholder='Field' name="fields" value = {{ field }}>
+                                <input id="field-{{loop.index}}" type="text" placeholder='Field' name="fields" value = "{{field}}" >
                             </div>
                             {% endfor %}
                         </div>
