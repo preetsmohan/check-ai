@@ -24,7 +24,7 @@ def pref_route_get():
     # print(exclusions)
     # print(postype)
     # print(field)
-    return render_template("preferences.html", skill_list = skills, exclusion_list = exclusions, postype_list = postype, field_list = field, signedIn=True)
+    return render_template("preferences.html", skill_list = skills, exclusion_list = exclusions, postype_list = postype, field_list = field, explevel = results[0][4], signedIn=True)
 
 @pref.route('/preferences', methods = ['POST'])
 def pref_route_post():
@@ -32,13 +32,14 @@ def pref_route_post():
     skills = request.form.getlist('skillz')
     exclusions = request.form.getlist('exclusions')
     postype = request.form.getlist('postype')
-    fields = request.form.getlist('fields') 
+    fields = request.form.getlist('fields')
+    explevel = request.form.getlist('explevel')
     
     skills_serialized = ";".join(map(str, skills))
     exclusions_serialized = ";".join(map(str, exclusions))
     postype_serialized = ";".join(map(str, postype))
     fields_serialized = ";".join(map(str, fields))
-    pref_sql("UPDATE user SET skills = '{0}', exclusions = '{1}', postype = '{2}', field = '{3}' WHERE uid = '{4}'", (skills_serialized, exclusions_serialized, postype_serialized, fields_serialized, session['uid']))
+    pref_sql("UPDATE user SET skills = '{0}', exclusions = '{1}', postype = '{2}', field = '{3}', explevel = '{4}',  WHERE uid = '{5}'", (skills_serialized, exclusions_serialized, postype_serialized, fields_serialized, explevel, session['uid']))
 
 
     #Probably return a redirect instead of a render, redirect to GET this version of the page.
