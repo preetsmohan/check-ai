@@ -14,6 +14,7 @@
                 <div class="card">
                     <div class="card-content black-text">
                         <span class="card-title">Skills</span>
+                        <p class=grey-text>Examples: C++, Android, AGILE, etc.</p>
                         <div id="skillz">
                             {% for skill in skill_list %}
                             <div class="input-field">
@@ -32,6 +33,7 @@
                 <div class="card">
                     <div class="card-content black-text">
                         <span class="card-title">Exclusions</span>
+                        <p class=grey-text>Examples: Java, iOS, Waterfall, etc.</p>
                         <div id="exclusions">
                             {% for exclusion in exclusion_list %}
                             <div class="input-field">
@@ -50,6 +52,7 @@
                 <div class="card">
                     <div class="card-content black-text">
                         <span class="card-title">Position Types</span>
+                        <p class=grey-text>Examples: Project Manager, IT Operations, Software Developer, etc.</p>
                         <div id="postype">
                             {% for postype in postype_list %}
                             <div class="input-field">
@@ -68,49 +71,48 @@
                 <div class="card">
                     <div class="card-content black-text">
                         <span class="card-title">Experience Level</span>
-                        <div id="explevels">
-<!--                             {% for explevel in explevel_list %}
-                            <div class="input-explevel">
-                                <a class="material-icons prefix" id="explevel-{{loop.index}}-label" href="#" onClick="deletePref('explevel-{{loop.index}}');">close</a>
-                                <input id="explevel-{{loop.index}}" type="text" placeholder='Experience Level' name="explevels" value = "{{explevel}}" >
-                            </div>
-                            {% endfor %} -->
-                            <p>
-                              <input class="with-gap" name="exp_group" type="radio" id="exp1" />
-                              <label for="exp1">Intern</label>
-                          </p>
-                          <p>
-                              <input class="with-gap" name="exp_group" type="radio" id="exp2" />
-                              <label for="exp2">New Grad</label>
-                          </p>
-                          <p>
-                              <input class="with-gap" name="exp_group" type="radio" id="exp3"  />
-                              <label for="exp3">Entry Level</label>
-                          </p>
-                          <p>
-                              <input class="with-gap" name="exp_group" type="radio" id="exp4"  />
-                              <label for="exp4">Experienced</label>
-                          </p>
-                          <p>
-                              <input class="with-gap" name="exp_group" type="radio" id="exp5"  />
-                              <label for="exp5">Senior</label>
-                          </p>
-                          <p>
-                              <input class="with-gap" name="exp_group" type="radio" id="exp6"  />
-                              <label for="exp6">Executive</label>
-                          </p>
-                          <p>
-                              <input class="with-gap" name="exp_group" type="radio" id="exp7"  />
-                              <label for="exp7">No Preference</label>
-                          </p>
+                        <p class=grey-text>How long have you been working?</p>
+
+                        <div id="explevels" data="{{explevel}}">
+                            <div class="input-field">
+                                <p>
+                                  <input class="with-gap" name="explevel" value="Intern" type="radio" id="exp1" />
+                                  <label for="exp1">Intern</label>
+                              </p>
+                              <p>
+                                  <input class="with-gap" name="explevel" value="New Grad" type="radio" id="exp2" />
+                                  <label for="exp2">New Grad</label>
+                              </p>
+                              <p>
+                                  <input class="with-gap" name="explevel" value="Entry Level" type="radio" id="exp3"  />
+                                  <label for="exp3">Entry Level</label>
+                              </p>
+                              <p>
+                                  <input class="with-gap" name="explevel" value="Experienced" type="radio" id="exp4"  />
+                                  <label for="exp4">Experienced</label>
+                              </p>
+                              <p>
+                                  <input class="with-gap" name="explevel" value="Senior" type="radio" id="exp5"  />
+                                  <label for="exp5">Senior</label>
+                              </p>
+                              <p>
+                                  <input class="with-gap" name="explevel" value="Executive" type="radio" id="exp6"  />
+                                  <label for="exp6">Executive</label>
+                              </p>
+                              <p>
+                                  <input class="with-gap" name="explevel" value="" type="radio" id="exp7"  />
+                                  <label for="exp7">No Preference</label>
+                              </p>
+                          </div>
                       </div>
                   </div>
-            </div>
-        </div>
-        <div class="col s12">
+              </div>
+          </div>
+          <div class="col s12">
             <div class="card">
                 <div class="card-content black-text">
                     <span class="card-title">Fields</span>
+                    <p class=grey-text>Examples: Healthcare, Aerospace, Automotive, Financial, etc.</p>
                     <div id="fields">
                         {% for field in field_list %}
                         <div class="input-field">
