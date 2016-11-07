@@ -10,9 +10,9 @@ def signup_get():
 
 @app.route('/signup', methods=['POST'])
 def signup_post():
-        print(request.form['username'])
-        print(request.form['password'])
-        print(request.form['confirm-password'])
+        #print(request.form['username'])
+        #print(request.form['password'])
+        #print(request.form['confirm-password'])
         pref_sql("INSERT INTO user (username, password) VALUES ('{0}', '{1}');", (request.form['username'], request.form['password']))
         #cur = app.mysql.connection.cursor()
         #cur.execute("INSERT INTO user (username, password) VALUES ('{0}', '{1}');".format(request.form['username'],request.form['password']))
@@ -43,6 +43,7 @@ def login_check(username, password):
         if(res[0][1] == password):
             session['username'] = request.form['username']
             session['uid'] = res[0][0]
+            session['signedIn'] = True
         else:
             #bad password
             print("Bad password")

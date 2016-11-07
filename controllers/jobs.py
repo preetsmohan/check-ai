@@ -9,6 +9,8 @@ jobs = Blueprint('jobs', __name__, template_folder = 'views')
 @jobs.route('/jobs', methods = ['GET'])
 def jobs_route_get():
 
+    if session.get('signedIn') == None:
+        return redirect('/login')
     sites = '-site:yelp.com/* -site:dice.com/* -site:indeed.com/* -site:monster.com/* -site:glassdoor.com/ -site:jobs.climber.com/* site:jobs.*.com/* OR site:careers.*.com/* OR site:*.com/careers/* OR site:*.com/jobs/* OR site:*.org/careers/* OR site:*.org/jobs/* OR site:jobs.lever.co/* OR site:boards.greenhouse.io/* OR site:linkedin.com/jobs/view/* '
 
     results = pref_sql("SELECT skills, exclusions, postype, field, explevel FROM user WHERE uid = '{0}'", (session['uid'],))
