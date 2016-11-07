@@ -33,13 +33,13 @@ def pref_route_post():
     exclusions = request.form.getlist('exclusions')
     postype = request.form.getlist('postype')
     fields = request.form.getlist('fields')
-    explevel = request.form.getlist('explevel')
+    explevel = request.form.get('explevel')
     
     skills_serialized = ";".join(map(str, skills))
     exclusions_serialized = ";".join(map(str, exclusions))
     postype_serialized = ";".join(map(str, postype))
     fields_serialized = ";".join(map(str, fields))
-    pref_sql("UPDATE user SET skills = '{0}', exclusions = '{1}', postype = '{2}', field = '{3}', explevel = '{4}',  WHERE uid = '{5}'", (skills_serialized, exclusions_serialized, postype_serialized, fields_serialized, explevel, session['uid']))
+    pref_sql("UPDATE user SET skills = '{0}', exclusions = '{1}', postype = '{2}', field = '{3}', explevel = '{4}' WHERE uid = '{5}'", (skills_serialized, exclusions_serialized, postype_serialized, fields_serialized, explevel, session['uid']))
 
 
     #Probably return a redirect instead of a render, redirect to GET this version of the page.
