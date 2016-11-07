@@ -3,6 +3,8 @@
 {% block head %}
 {{ super() }}
 <!-- Insert other stuff that goes in head here -->
+<link rel="stylesheet" href="/static/css/pref.css">
+
 {% endblock %}
 {% block content %}
 
@@ -76,7 +78,7 @@
                         <div id="explevels" data="{{explevel}}">
                             <div class="input-field">
                                 <p>
-                                  <input class="with-gap" name="explevel" value="Intern" type="radio" id="exp1" />
+                                  <input class="with-gap blue" name="explevel" value="Intern" type="radio" id="exp1" />
                                   <label for="exp1">Intern</label>
                               </p>
                               <p>
