@@ -12,6 +12,7 @@
 
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="icon" href="static/img/favicon.ico" sizes="32x32" type="image/x-icon'/">
 
 
     <title>{% block title %}{% endblock %}</title>
@@ -29,7 +30,7 @@
                     <li><a href="/">Home</a></li>
                     {% if signedIn %}
                     <li><a href="/preferences">Preferences</a></li>
-                    <li><a href="/jobs">Jobs</a></li>
+                    <li><a href="/jobs" class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Hang tight! It may take a minute to get your results ready.">Jobs</a></li>
                     {% endif %}
                 </ul>
 
@@ -37,7 +38,7 @@
                     <li><a href="/">Home</a></li>
                     {% if signedIn %}
                     <li><a href="/preferences">Preferences</a></li>
-                    <li><a href="/jobs">Jobs</a></li>
+                    <li><a href="/jobs" class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Hang tight! It may take a minute to get your results ready.">Jobs</a></li>
                     {% endif %}
                 </ul>
 

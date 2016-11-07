@@ -116,10 +116,10 @@ def scrape(keyword):
 				title = results_dict[i]["title"]
 				link = results_dict[i]["link"]
 
-				# if "-" + " " in title:
-				#  	loc = title.find("-" + " ")
-				#  	if loc >= 0:
-				#  		title = title[:loc]
+				if "..." in title:
+					loc = title.find("...")
+					if loc >= 0:
+						title = title[:loc]
 	
 				if "indeed" in link:
 					if "resume" not in link:
