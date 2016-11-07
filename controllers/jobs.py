@@ -11,11 +11,11 @@ def jobs_route_get():
 
     if session.get('signedIn') == None:
         return redirect('/login')
-    sites = '-site:yelp.com/* -site:dice.com/* -site:indeed.com/* -site:monster.com/* -site:glassdoor.com/ -site:jobs.climber.com/* site:jobs.*.com/* OR site:careers.*.com/* OR site:*.com/careers/* OR site:*.com/jobs/* OR site:*.org/careers/* OR site:*.org/jobs/* OR site:jobs.lever.co/* OR site:boards.greenhouse.io/* OR site:linkedin.com/jobs/view/* '
+    sites = '-site:yelp.com/* -site:dice.com/* -site:indeed.com/* -site:monster.com/* -site:glassdoor.com/ -site:jobs.climber.com/* -site:ziprecruiter.com/* site:jobs.*.com/* OR site:careers.*.com/* OR site:*.com/careers/* OR site:*.com/jobs/* OR site:*.org/careers/* OR site:*.org/jobs/* OR site:jobs.lever.co/* OR site:boards.greenhouse.io/* OR site:linkedin.com/jobs/view/* '
 
     results = pref_sql("SELECT skills, exclusions, postype, field, explevel FROM user WHERE uid = '{0}'", (session['uid'],))
 
-    if len(results) and not None in results[0][:4]: #if we have something in the database
+    if len(results) and not None in results[0][:5]: #if we have something in the database
         skills = results[0][0].split(";")
         print(skills)
         exclusions = results[0][1].split(";")
@@ -24,9 +24,10 @@ def jobs_route_get():
         print(postype)
         fields = results[0][3].split(";")
         print(fields)
-    
-    experience_level = ''
+        experience_level = results[0][4].split(";")
 
+    experience_level = experience_level[0]
+    
     all_fields = fields[0]
     for field in range(1, len(fields)):
         if fields[field] != '':
@@ -39,13 +40,15 @@ def jobs_route_get():
     for exclusion in range(1, len(exclusions)):
         if exclusions[exclusion] != '':
             all_exclusions+= ' -' + exclusions[exclusion]
+            if experience_level == 'New Grad' or experience_level == 'Intern' or experience_level == 'Entry Level':
+                all_exclusions += " -senior -lead"
     
     all_skills = '"' + skills[0] + '"'
     for skill in range(1, len(skills)):
         if skills[skill] != '':
             all_skills += ' OR ' + '"' + skills[skill] + '"'
 
-    query = sites + all_positions + ' "' + experience_level + '"' + ' ' + all_fields + ' ' + all_skills + ' -' + all_exclusions
+    query = sites + all_positions + ' ' + experience_level + ' ' + all_fields + ' ' + all_skills + ' -' + all_exclusions
     print("QUERY: ", query)
 
 
