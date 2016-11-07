@@ -24,4 +24,5 @@ function addInputs(divName, inputType, placeholderName){
 			break;
 	}
 	document.getElementById(divName).appendChild(newdiv);
+	return false;
 }
