@@ -13,6 +13,9 @@ results.json
 *.db
 *.json
 
+.scrapecache/
+parser.cookies.txt
+
 >>>>>>> dbd7747f5c8d085a912a6a0f7b0ffb9420c256cd
 # Windows image file caches
 Thumbs.db
