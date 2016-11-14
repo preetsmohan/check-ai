@@ -1,7 +1,7 @@
 from flask import *
 from config import app
 import scrapers as scraper
-from mysql import *
+from utils import *
 jobs = Blueprint('jobs', __name__, template_folder = 'views')
 #Exclusions, Skills, Position-type (PM, software dev), Field (AI, Medicine, sports), Experience Level
 
@@ -17,13 +17,9 @@ def jobs_route_get():
 
     if len(results) and not None in results[0][:5]: #if we have something in the database
         skills = results[0][0].split(";")
-        print(skills)
         exclusions = results[0][1].split(";")
-        print(exclusions)
         postype = results[0][2].split(";")
-        print(postype)
         fields = results[0][3].split(";")
-        print(fields)
         experience_level = results[0][4].split(";")
 
     experience_level = experience_level[0]
@@ -49,7 +45,6 @@ def jobs_route_get():
             all_skills += ' OR ' + '"' + skills[skill] + '"'
 
     query = sites + all_positions + ' ' + experience_level + ' ' + all_fields + ' ' + all_skills + ' -' + all_exclusions
-    print("QUERY: ", query)
 
 
     jobs, summaries, num = scraper.scrape(query)

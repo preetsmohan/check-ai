@@ -1,7 +1,7 @@
 from flask import *
 from config import app
 login = Blueprint('login', __name__, template_folder = 'views')
-from mysql import pref_sql
+from utils import *
 
 @app.route('/signup', methods=['GET'])
 def signup_get():
@@ -10,13 +10,7 @@ def signup_get():
 
 @app.route('/signup', methods=['POST'])
 def signup_post():
-        #print(request.form['username'])
-        #print(request.form['password'])
-        #print(request.form['confirm-password'])
         pref_sql("INSERT INTO user (username, password) VALUES ('{0}', '{1}');", (request.form['username'], request.form['password']))
-        #cur = app.mysql.connection.cursor()
-        #cur.execute("INSERT INTO user (username, password) VALUES ('{0}', '{1}');".format(request.form['username'],request.form['password']))
-        #app.mysql.connection.commit()
         success = login_check(request.form['username'], request.form['password'])
         if success:
             return redirect('/preferences')
@@ -38,8 +32,6 @@ def login_post():
 def login_check(username, password):
     res = pref_sql("SELECT uid, password FROM user WHERE username = '{0}'", (username,))
     if res:
-        print(res[0][1])
-        print(password)
         if(res[0][1] == password):
             session['username'] = request.form['username']
             session['uid'] = res[0][0]
