@@ -2,6 +2,7 @@ from flask import *
 from config import app
 import scrapers as scraper
 from mysql import *
+from utils import word_search
 jobs = Blueprint('jobs', __name__, template_folder = 'views')
 #Exclusions, Skills, Position-type (PM, software dev), Field (AI, Medicine, sports), Experience Level
 
@@ -52,6 +53,16 @@ def jobs_route_get():
     print("QUERY: ", query)
 
 
-    jobs, summaries, num = scraper.scrape(query)
-    return render_template("jobs.html", jobs=jobs, summaries=summaries, num=num, signedIn=True)
+    jobs, summaries, num, full_desc = scraper.scrape(query)
+
+
+    match_skills = []
+
+    for desc in full_desc:
+        skilz = word_search.findAllMatches(skills, desc)
+        match_skills.append(skilz)
+
+    print(match_skills)
+
+    return render_template("jobs.html", jobs=jobs, summaries=summaries, num=num, match_skills=match_skills, signedIn=True)
 

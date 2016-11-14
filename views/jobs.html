@@ -17,6 +17,13 @@
                     		<h6>{{sentence}}</h6>
                     	{% endfor %}
                     </div>
+                    <div class="chip-container right-align">
+                    {% for skill in match_skills[i] %}
+                    <div class="chip">
+                    {{skill}}
+                    </div>
+                    {% endfor %}
+                    </div>
                     <a target="_blank" href="{{jobs[i][1]}}">apply</a>
                 </div>
             </div>
