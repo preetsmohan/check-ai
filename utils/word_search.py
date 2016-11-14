@@ -12,7 +12,11 @@ def findAllMatches(word_list, desc):
     '''
     filtered_list = []
     for word in word_list:
-        match_obj = findWholeWord(word)(desc)
+        match_obj = None
+        try:
+            match_obj = findWholeWord(word)(desc)
+        except:
+            pass
         if match_obj:
             filtered_list.append(match_obj.group(0))
     return filtered_list
