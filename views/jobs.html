@@ -8,28 +8,30 @@
 <div class="container">
     <div class="row">
         <div class="col s12">
-        {% for i in range (0, num) %}
+            {% for i in range (0, num) %}
             <div class="card">
                 <div class="card-content black-text">
                     <span class="card-title">{{jobs[i][0]}}</span>
                     <div class="summary">
                     	{% for sentence in summaries[i] %}
-                    		<h6>{{sentence}}</h6>
-                    	{% endfor %}
-                    </div>
-                    <div class="chip-container right-align">
+                      <h6>{{sentence}}</h6>
+                      {% endfor %}
+                  </div>
+                  <div class="chip-container right-align">
                     {% for skill in match_skills[i] %}
                     <div class="chip">
-                    {{skill}}
+                        {{skill}}
                     </div>
                     {% endfor %}
-                    </div>
-                    <a target="_blank" href="{{jobs[i][1]}}">apply</a>
                 </div>
             </div>
-        {% endfor %}
+            <div class="card-action">
+                <a target="_blank" href="{{jobs[i][1]}}">apply</a>
+            </div>
         </div>
+        {% endfor %}
     </div>
+</div>
 </div>
 {% endblock %}
 
