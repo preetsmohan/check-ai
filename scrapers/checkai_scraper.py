@@ -165,12 +165,14 @@ def scrape(keyword):
 
 	for result in results:
 		url = result[1]
-
-		response = opener.open(url)
-		page = ''.join([str(l) for l in response.readlines()])
-		soup = BeautifulSoup(page, "lxml")
-		html = str(soup)
-		full_desc.append(html)
+		try:
+			response = opener.open(url)
+			page = ''.join([str(l) for l in response.readlines()])
+			soup = BeautifulSoup(page, "lxml")
+			html = str(soup)
+			full_desc.append(html)
+		except Exception as e:
+		 	continue
 
 
 	all_summaries = []
