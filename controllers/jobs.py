@@ -47,6 +47,16 @@ def jobs_route_get():
     query = sites + all_positions + ' ' + experience_level + ' ' + all_fields + ' ' + all_skills + ' -' + all_exclusions
 
 
-    jobs, summaries, num = scraper.scrape(query)
-    return render_template("jobs.html", jobs=jobs, summaries=summaries, num=num, signedIn=True)
+    jobs, summaries, num, full_desc = scraper.scrape(query)
+
+
+    match_skills = []
+
+    for desc in full_desc:
+        skilz = word_search.findAllMatches(skills, desc)
+        match_skills.append(skilz)
+
+    print(match_skills)
+
+    return render_template("jobs.html", jobs=jobs, summaries=summaries, num=num, match_skills=match_skills, signedIn=True)
 
