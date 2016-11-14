@@ -9,135 +9,135 @@
 {% block content %}
 
 <div class="container">
-    <h1 class="header light">Preferences</h1>
-    <div class="row">
-        <form method="POST">
-            <div class="col s12">
-                <div class="card">
-                    <div class="card-content black-text">
-                        <span class="card-title">Skills</span>
-                        <p class=grey-text>Examples: C++, Android, AGILE, etc.</p>
-                        <div id="skillz">
-                            {% for skill in skill_list %}
-                            <div class="input-field">
-                                <a class="material-icons prefix" id="skill-{{loop.index}}-label" href="#" onClick="deletePref('skill-{{loop.index}}');">close</a>
-                                <input id="skill-{{loop.index}}" type="text" placeholder='Skill' name="skillz" value = "{{skill}}">
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    <div class="card-action">
-                        <a href="#" type="button" value="+" onClick = "addInputs('skillz', 'text', 'Skill'); return false;">Add skill</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12">
-                <div class="card">
-                    <div class="card-content black-text">
-                        <span class="card-title">Exclusions</span>
-                        <p class=grey-text>Examples: Java, iOS, Waterfall, etc.</p>
-                        <div id="exclusions">
-                            {% for exclusion in exclusion_list %}
-                            <div class="input-field">
-                                <a class="material-icons prefix" id="exclusion-{{loop.index}}-label" href="#" onClick="deletePref('exclusion-{{loop.index}}');">close</a>
-                                <input id="exclusion-{{loop.index}}" type="text" placeholder='Exclusion' name="exclusions" value = "{{exclusion}}" >
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    <div class="card-action">
-                        <a href="#" type="button" value="+" onClick = "addInputs('exclusions', 'text', 'Exclusion'); return false;">Add exclusion</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12">
-                <div class="card">
-                    <div class="card-content black-text">
-                        <span class="card-title">Position Types</span>
-                        <p class=grey-text>Examples: Project Manager, IT Operations, Software Developer, etc.</p>
-                        <div id="postype">
-                            {% for postype in postype_list %}
-                            <div class="input-field">
-                                <a class="material-icons prefix" id="postype-{{loop.index}}-label" href="#" onClick="deletePref('postype-{{loop.index}}');">close</a>
-                                <input id="postype-{{loop.index}}" type="text" placeholder='Position' name="postype" value = "{{postype}}" >
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    <div class="card-action">
-                        <a href="#" type="button" value="+" onClick = "addInputs('postype', 'text', 'Position Type'); return false;">Add Position Type</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12">
-                <div class="card">
-                    <div class="card-content black-text" style="padding-bottom: 40px">
-                        <span class="card-title">Experience Level</span>
-                        <p class=grey-text>How long have you been working?</p>
-
-                        <div id="explevels" data="{{explevel}}">
-                            <div class="input-field">
-                                <p>
-                                  <input class="with-gap blue" name="explevel" value="Intern" type="radio" id="exp1" />
-                                  <label for="exp1">Intern</label>
-                              </p>
-                              <p>
-                                  <input class="with-gap" name="explevel" value="New Grad" type="radio" id="exp2" />
-                                  <label for="exp2">New Grad</label>
-                              </p>
-                              <p>
-                                  <input class="with-gap" name="explevel" value="Entry Level" type="radio" id="exp3"  />
-                                  <label for="exp3">Entry Level</label>
-                              </p>
-                              <p>
-                                  <input class="with-gap" name="explevel" value="Experienced" type="radio" id="exp4"  />
-                                  <label for="exp4">Experienced</label>
-                              </p>
-                              <p>
-                                  <input class="with-gap" name="explevel" value="Senior" type="radio" id="exp5"  />
-                                  <label for="exp5">Senior</label>
-                              </p>
-                              <p>
-                                  <input class="with-gap" name="explevel" value="Executive" type="radio" id="exp6"  />
-                                  <label for="exp6">Executive</label>
-                              </p>
-                              <p>
-                                  <input class="with-gap" name="explevel" value="" type="radio" id="exp7"  />
-                                  <label for="exp7">No Preference</label>
-                              </p>
-                          </div>
-                      </div>
-                  </div>
+  <h1 class="header light">Preferences</h1>
+  <div class="row">
+    <form method="POST">
+      <div class="col s12">
+        <div class="card">
+          <div class="card-content black-text">
+            <span class="card-title">Skills</span>
+            <p class=grey-text>Examples: C++, Android, AGILE, etc.</p>
+            <div id="skillz">
+              {% for skill in skill_list %}
+              <div class="input-field">
+                <a class="material-icons prefix" id="skill-{{loop.index}}-label" href="#" onClick="deletePref('skill-{{loop.index}}');">close</a>
+                <input id="skill-{{loop.index}}" type="text" placeholder='Skill' name="skillz" value = "{{skill}}">
               </div>
-          </div>
-          <div class="col s12">
-            <div class="card">
-                <div class="card-content black-text">
-                    <span class="card-title">Fields</span>
-                    <p class=grey-text>Examples: Healthcare, Aerospace, Automotive, Financial, etc.</p>
-                    <div id="fields">
-                        {% for field in field_list %}
-                        <div class="input-field">
-                            <a class="material-icons prefix" id="field-{{loop.index}}-label" href="#" onClick="deletePref('field-{{loop.index}}');">close</a>
-                            <input id="field-{{loop.index}}" type="text" placeholder='Field' name="fields" value = "{{field}}" >
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-                <div class="card-action">
-                    <a href="#" type="button" value="+" onClick = "addInputs('fields', 'text', 'Field'); return false;">Add Field</a>
-                </div>
+              {% endfor %}
             </div>
+          </div>
+          <div class="card-action">
+            <a href="#" type="button" value="+" onClick = "addInputs('skillz', 'text', 'Skill'); return false;">Add skill</a>
+          </div>
         </div>
+      </div>
+      <div class="col s12">
+        <div class="card">
+          <div class="card-content black-text">
+            <span class="card-title">Exclusions</span>
+            <p class=grey-text>Examples: Java, iOS, Waterfall, etc.</p>
+            <div id="exclusions">
+              {% for exclusion in exclusion_list %}
+              <div class="input-field">
+                <a class="material-icons prefix" id="exclusion-{{loop.index}}-label" href="#" onClick="deletePref('exclusion-{{loop.index}}');">close</a>
+                <input id="exclusion-{{loop.index}}" type="text" placeholder='Exclusion' name="exclusions" value = "{{exclusion}}" >
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="card-action">
+            <a href="#" type="button" value="+" onClick = "addInputs('exclusions', 'text', 'Exclusion'); return false;">Add exclusion</a>
+          </div>
+        </div>
+      </div>
+      <div class="col s12">
+        <div class="card">
+          <div class="card-content black-text">
+            <span class="card-title">Position Types</span>
+            <p class=grey-text>Examples: Project Manager, IT Operations, Software Developer, etc.</p>
+            <div id="postype">
+              {% for postype in postype_list %}
+              <div class="input-field">
+                <a class="material-icons prefix" id="postype-{{loop.index}}-label" href="#" onClick="deletePref('postype-{{loop.index}}');">close</a>
+                <input id="postype-{{loop.index}}" type="text" placeholder='Position' name="postype" value = "{{postype}}" >
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="card-action">
+            <a href="#" type="button" value="+" onClick = "addInputs('postype', 'text', 'Position Type'); return false;">Add Position Type</a>
+          </div>
+        </div>
+      </div>
+      <div class="col s12">
+        <div class="card">
+          <div class="card-content black-text" style="padding-bottom: 40px">
+            <span class="card-title">Experience Level</span>
+            <p class=grey-text>How long have you been working?</p>
+
+            <div id="explevels" data="{{explevel}}">
+              <div class="input-field">
+                <p>
+                  <input class="with-gap blue" name="explevel" value="Intern" type="radio" id="exp1" />
+                  <label for="exp1">Intern</label>
+                </p>
+                <p>
+                  <input class="with-gap" name="explevel" value="New Grad" type="radio" id="exp2" />
+                  <label for="exp2">New Grad</label>
+                </p>
+                <p>
+                  <input class="with-gap" name="explevel" value="Entry Level" type="radio" id="exp3"  />
+                  <label for="exp3">Entry Level</label>
+                </p>
+                <p>
+                  <input class="with-gap" name="explevel" value="Experienced" type="radio" id="exp4"  />
+                  <label for="exp4">Experienced</label>
+                </p>
+                <p>
+                  <input class="with-gap" name="explevel" value="Senior" type="radio" id="exp5"  />
+                  <label for="exp5">Senior</label>
+                </p>
+                <p>
+                  <input class="with-gap" name="explevel" value="Executive" type="radio" id="exp6"  />
+                  <label for="exp6">Executive</label>
+                </p>
+                <p>
+                  <input class="with-gap" name="explevel" value="" type="radio" id="exp7"  />
+                  <label for="exp7">No Preference</label>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col s12">
+        <div class="card">
+          <div class="card-content black-text">
+            <span class="card-title">Fields</span>
+            <p class=grey-text>Examples: Healthcare, Aerospace, Automotive, Financial, etc.</p>
+            <div id="fields">
+              {% for field in field_list %}
+              <div class="input-field">
+                <a class="material-icons prefix" id="field-{{loop.index}}-label" href="#" onClick="deletePref('field-{{loop.index}}');">close</a>
+                <input id="field-{{loop.index}}" type="text" placeholder='Field' name="fields" value = "{{field}}" >
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="card-action">
+            <a href="#" type="button" value="+" onClick = "addInputs('fields', 'text', 'Field'); return false;">Add Field</a>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="row right">
-        <div class="fixed-action-btn">
-            <button class="btn-floating btn-large blue tooltipped" type="submit" data-position="top" data-delay="50" data-tooltip="Update">
-              <i class="large material-icons">update</i>
-          </button>
+      <div class="fixed-action-btn">
+        <button class="btn-floating btn-large blue tooltipped" type="submit" data-position="top" data-delay="50" data-tooltip="Update">
+          <i class="large material-icons">update</i>
+        </button>
       </div>
-  </form>
-</div>
+    </form>
+  </div>
 </div>
 
 {% endblock %}
