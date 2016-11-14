@@ -167,6 +167,24 @@ def scrape(keyword):
 				#for char in error_chars:
 					#sentence = sentence[char:] + sentence[:char + 4]
 
+				if '\\' + 'xe2' + '\\' + 'x80' + '\\' + 'x94' in sentence:
+					loc = sentence.find('\\' + 'xe2' + '\\' + 'x80' + '\\' + 'x94')
+					sentence = sentence[:loc] + " - " + sentence[loc + 12:]
+
+				if '\\' + 'xe2' + '\\' + 'x80' + '\\' + 'x99' in sentence:
+					loc = sentence.find('\\' + 'xe2' + '\\' + 'x80' + '\\' + 'x99')
+					sentence = sentence[:loc] + "'" + sentence[loc + 12:]
+					sentence = "hello"
+
+
+
+				sentence.replace('\\' + 'xc2' + '\\' + 'xA0', "")
+				sentence.replace('\xe2\x80\xa2', "-")
+				sentence.replace('\xe2\x80\x99', "'")
+				sentence.replace('\\' + 'xe2' + '\\' + 'x80' + '\\' + 'x94', "-")
+				sentence.replace('the', "K A S P A R O V")
+
+
 				summary.append(sentence)
 				#if 'xa0' in sentence:
 					#raise
