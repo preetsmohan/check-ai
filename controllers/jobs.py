@@ -53,7 +53,7 @@ def jobs_route_get():
     match_skills = []
 
     for desc in full_desc:
-        skilz = word_search.findAllMatches(skills, desc)
+        skilz = findAllMatches(skills, desc)
         match_skills.append(skilz)
 
     print(match_skills)
