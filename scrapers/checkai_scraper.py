@@ -18,6 +18,15 @@ from sumy.nlp.stemmers import Stemmer
 from sumy.utils import get_stop_words
 import unidecode
 
+import http.cookiejar as cookielib
+import os
+import urllib
+import re
+import string
+from bs4 import BeautifulSoup
+
+cookie_filename = "parser.cookies.txt"
+
 
 TOTAL_INDEED = 3
 
@@ -106,6 +115,7 @@ def scrape(keyword):
 	
 	results = []
 	
+	
 	for w in range (0, num_pages):
 		num_results = int(data[w]["num_results"])
 		
@@ -135,6 +145,32 @@ def scrape(keyword):
 
 				elif "monster" not in link:
 					results.append((title, link)) #it isn't excluding monster from the query?
+
+	full_desc = []
+
+	cj = cookielib.MozillaCookieJar(cookie_filename)
+
+	if os.access(cookie_filename, os.F_OK):
+		cj.load()
+	
+	opener = urllib.request.build_opener(
+            urllib.request.HTTPRedirectHandler(),
+            urllib.request.HTTPHandler(debuglevel=0),
+            urllib.request.HTTPSHandler(debuglevel=0),
+            urllib.request.HTTPCookieProcessor(cj)
+        )
+	
+	opener.addheaders=[('User-agent', ('Mozilla/4.0 (compatible; MSIE 6.0; ''Windows NT 5.2; .NET CLR 1.1.4322)'))]
+
+
+	for result in results:
+		url = result[1]
+
+		response = opener.open(url)
+		page = ''.join([str(l) for l in response.readlines()])
+		soup = BeautifulSoup(page, "lxml")
+		html = str(soup)
+		full_desc.append(html)
 
 
 	all_summaries = []
@@ -174,15 +210,6 @@ def scrape(keyword):
 				if '\\' + 'xe2' + '\\' + 'x80' + '\\' + 'x99' in sentence:
 					loc = sentence.find('\\' + 'xe2' + '\\' + 'x80' + '\\' + 'x99')
 					sentence = sentence[:loc] + "'" + sentence[loc + 12:]
-					sentence = "hello"
-
-
-
-				sentence.replace('\\' + 'xc2' + '\\' + 'xA0', "")
-				sentence.replace('\xe2\x80\xa2', "-")
-				sentence.replace('\xe2\x80\x99', "'")
-				sentence.replace('\\' + 'xe2' + '\\' + 'x80' + '\\' + 'x94', "-")
-				sentence.replace('the', "K A S P A R O V")
 
 
 				summary.append(sentence)
@@ -198,7 +225,7 @@ def scrape(keyword):
 
 	
 	#print(results)
-	return results, all_summaries, len(results)
+	return results, all_summaries, len(results), full_desc
 	
 	#print(data)
 	
