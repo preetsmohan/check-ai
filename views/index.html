@@ -13,7 +13,7 @@
     <div class="row center">
         {% if signedIn %}
         <a class="waves-effect waves-light btn blue" href="preferences">View Profile</a>
-        <a class="waves-effect waves-light btn blue" href="jobs" class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Be sure to update your profile before!">View Jobs</a>
+        <a class="waves-effect waves-light btn blue tooltipped" href="jobs" data-position="bottom" data-delay="30" data-tooltip="Be sure to update your profile before!" onclick="hideall();">View Jobs</a>
         {% else %}
         <a class="waves-effect waves-light btn blue" href="login">Log In</a>
         <a class="waves-effect waves-light btn blue" href="signup">Sign Up</a>
