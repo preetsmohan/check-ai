@@ -2,11 +2,21 @@ function deletePref(objectId){
     $("#"+objectId).remove();
     $("#"+objectId+"-label").remove();
 }
-
+var moveFab;
 $( document ).ready(function() {
 
     // console.log();
     setRadioSelection($("#explevels").attr('data'));
+    moveFab = false;
+
+    $(window).scroll(function() {
+       if($(window).scrollTop() + $(window).height() == $(document).height()) {
+        hideFab();
+    }else{
+        if(moveFab)
+            showFab();
+    }
+});
 });
 
 function setRadioSelection(expLevel){
@@ -36,3 +46,14 @@ function setRadioSelection(expLevel){
     }
 }
 
+function hideFab(){
+    $('#save-fab').animate({top: "150px"}, 100);
+    moveFab = true;
+    // $('#save-fab').hide();
+}
+
+function showFab(){
+    $('#save-fab').animate({top: "0px"}, 100);
+    moveFab = false;
+    // $('#save-fab').show();
+}
