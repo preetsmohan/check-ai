@@ -5,5 +5,6 @@ $( document ).ready(function() {
 
 function hideall(){
 	$('.content-div').hide();
-	document.body.innerHTML += "<div class='loader'></div>"
+	document.body.innerHTML += "<div style='display:flex;justify-content:center;align-items:center;'><div class='loader center'></div>"
+
 }
