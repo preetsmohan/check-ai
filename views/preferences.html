@@ -8,15 +8,18 @@
 {% endblock %}
 {% block content %}
 
+
 <div class="container">
-  <h1 class="header light">Preferences</h1>
+  <h1 class="header light">Profile</h1>
+  <p> Change settings here to suit your job preferences </p>
   <div class="row">
     <form method="POST">
       <div class="col s12">
         <div class="card">
           <div class="card-content black-text">
-            <span class="card-title">Skills</span>
-            <p class=grey-text>Examples: C++, Android, AGILE, etc.</p>
+            <span class="card-title">Preferences</span>
+            <p>These are search terms that you prefer for your job. This is <b>NOT</b> your job title.</p>
+            <p class="grey-text">Examples: C++, Seattle, AGILE, etc.</p>
             <div id="skillz">
               {% for skill in skill_list %}
               <div class="input-field">
@@ -35,7 +38,8 @@
         <div class="card">
           <div class="card-content black-text">
             <span class="card-title">Exclusions</span>
-            <p class=grey-text>Examples: Java, iOS, Waterfall, etc.</p>
+            <p>These are things you want excluded from your job search. They should be related to your preferences.</p>
+            <p class="grey-text">Examples: Java, Chicago, Waterfall, etc.</p>
             <div id="exclusions">
               {% for exclusion in exclusion_list %}
               <div class="input-field">
@@ -54,7 +58,8 @@
         <div class="card">
           <div class="card-content black-text">
             <span class="card-title">Position Types</span>
-            <p class=grey-text>Examples: Project Manager, IT Operations, Software Developer, etc.</p>
+            <p> This is the job title you're looking for. </p>
+            <p class="grey-text">Examples: Project Manager, IT Operations, Software Developer, etc.</p>
             <div id="postype">
               {% for postype in postype_list %}
               <div class="input-field">
@@ -73,7 +78,7 @@
         <div class="card">
           <div class="card-content black-text" style="padding-bottom: 40px">
             <span class="card-title">Experience Level</span>
-            <p class=grey-text>How long have you been working?</p>
+            <p class="grey-text">How long have you been working?</p>
 
             <div id="explevels" data="{{explevel}}">
               <div class="input-field">
@@ -114,7 +119,8 @@
         <div class="card">
           <div class="card-content black-text">
             <span class="card-title">Fields</span>
-            <p class=grey-text>Examples: Healthcare, Aerospace, Automotive, Financial, etc.</p>
+            <p>The industry or area that you're interested in working in.</p>
+            <p class="grey-text">Examples: Healthcare, Aerospace, Automotive, Financial, etc.</p>
             <div id="fields">
               {% for field in field_list %}
               <div class="input-field">
@@ -130,16 +136,22 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col s12">
+        <button class="btn waves-effect waves-light blue" type="submit">Update Profile
+          <i class="material-icons right">save</i>
+        </button>
+      </div>
+    </div>
     <div class="row right">
       <div class="fixed-action-btn">
-        <button class="btn-floating btn-large blue tooltipped" type="submit" data-position="top" data-delay="50" data-tooltip="Update">
-          <i class="large material-icons">update</i>
+        <button id="save-fab" class="btn-floating btn-large blue tooltipped" type="submit" data-position="top" data-delay="50" data-tooltip="Update">
+          <i class="large material-icons">save</i>
         </button>
       </div>
     </form>
   </div>
 </div>
-
 {% endblock %}
 
 {% block javascript %}

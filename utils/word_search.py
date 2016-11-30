@@ -1,4 +1,5 @@
 import re
+import string
 
 #taken from http://stackoverflow.com/questions/5319922/python-check-if-word-is-in-a-string
 
@@ -12,11 +13,12 @@ def findAllMatches(word_list, desc):
     '''
     filtered_list = []
     for word in word_list:
-        match_obj = None
-        try:
-            match_obj = findWholeWord(word)(desc)
-        except:
-            pass
-        if match_obj:
-            filtered_list.append(match_obj.group(0))
+        if word in desc.lower().strip(string.whitespace):
+            filtered_list.append(word)
+        # try:
+        #     match_obj = findWholeWord(word)(desc)
+        # except:
+        #     pass
+        # if match_obj:
+        #     filtered_list.append(match_obj.group(0))
     return filtered_list

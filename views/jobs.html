@@ -21,10 +21,20 @@
                         {{skill}}
                     </div>
                     {% endfor %}
+                    {% for pos in match_pos[i] %}
+                    <div class="chip blue lighten-3">
+                        {{pos}}
+                    </div>
+                    {% endfor %}
+                    {% for field in match_fields[i] %}
+                    <div class="chip blue lighten-2">
+                        {{field}}
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
             <div class="card-action">
-                <a target="_blank" href="{{jobs[i][1]}}">apply</a>
+                <a target="_blank" href="{{jobs[i][1]}}">More Details</a>
             </div>
         </div>
         {% endfor %}
