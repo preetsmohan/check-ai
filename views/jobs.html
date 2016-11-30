@@ -13,9 +13,7 @@
                 <div class="card-content black-text">
                     <span class="card-title">{{jobs[i][0]}}</span>
                     <div class="summary">
-                    	{% for sentence in summaries[i] %}
-                      <h6>{{sentence}}</h6>
-                      {% endfor %}
+                      <h6 style="color: grey">{{summaries[i]}}</h6>
                   </div>
                   <div class="chip-container right-align">
                     {% for skill in match_skills[i] %}

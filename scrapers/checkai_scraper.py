@@ -31,7 +31,7 @@ cookie_filename = "parser.cookies.txt"
 TOTAL_INDEED = 3
 
 LANGUAGE = "english"
-SENTENCES_COUNT = 2
+SENTENCES_COUNT = 10
 
 username = "check-ai-team@umich.edu"
 password = "checkaiteam"
@@ -93,7 +93,7 @@ def indeed(url):
 
 def scrape(keyword):
 # See in the config.cfg file for possible values
-	num_pages = 1
+	num_pages = 3
 	config = {
 	    'use_own_ip': 'False',
 	    'keyword': keyword,
@@ -114,7 +114,7 @@ def scrape(keyword):
 		data = json.load(data_file)
 	
 	results = []
-	
+	all_summaries = []
 	
 	for w in range (0, num_pages):
 		num_results = int(data[w]["num_results"])
@@ -145,6 +145,14 @@ def scrape(keyword):
 
 				elif "monster" not in link:
 					results.append((title, link)) #it isn't excluding monster from the query?
+		
+			summary_text = results_dict[i]["snippet"]
+			summary = ""
+			print(summary_text)
+			for char in summary_text:
+				summary += char
+
+			all_summaries.append(summary)
 
 	full_desc = []
 
@@ -174,56 +182,54 @@ def scrape(keyword):
 		except Exception as e:
 		 	continue
 
-
-	all_summaries = []
 	
-	for result in results:
-		url = result[1]
+	# for result in results:
+	# 	url = result[1]
 
-		try:
-			if "linkedin" in url:
-				doc = linkedin(url)
-				parser = PlaintextParser.from_string(doc, Tokenizer(LANGUAGE))
+	# 	try:
+	# 		if "linkedin" in url:
+	# 			doc = linkedin(url)
+	# 			parser = PlaintextParser.from_string(doc, Tokenizer(LANGUAGE))
 
-			else:
-				parser = HtmlParser.from_url(url, Tokenizer(LANGUAGE))
-    		# or for plain text files
-    		# parser = PlaintextParser.from_file("document.txt", Tokenizer(LANGUAGE))
-			stemmer = Stemmer(LANGUAGE)
+	# 		else:
+	# 			parser = HtmlParser.from_url(url, Tokenizer(LANGUAGE))
+ #    		# or for plain text files
+ #    		# parser = PlaintextParser.from_file("document.txt", Tokenizer(LANGUAGE))
+	# 		stemmer = Stemmer(LANGUAGE)
 
-			summarizer = Summarizer(stemmer)
-			summarizer.stop_words = get_stop_words(LANGUAGE)
+	# 		summarizer = Summarizer(stemmer)
+	# 		summarizer.stop_words = get_stop_words(LANGUAGE)
 	
-			summary = []
+	# 		summary = []
 
-			for sentence in summarizer(parser.document, SENTENCES_COUNT):
-				sentence = sentence._text
-				#if '\\x' in sentence:
-				#	raise
-				#error_chars = [i for i, letter in enumerate(sentence) if letter == '\\x']
-				#print("ERROR CHARS", error_chars)
-				#for char in error_chars:
-					#sentence = sentence[char:] + sentence[:char + 4]
+	# 		for sentence in summarizer(parser.document, 2):
+	# 			sentence = sentence._text
+	# 			#if '\\x' in sentence:
+	# 			#	raise
+	# 			#error_chars = [i for i, letter in enumerate(sentence) if letter == '\\x']
+	# 			#print("ERROR CHARS", error_chars)
+	# 			#for char in error_chars:
+	# 				#sentence = sentence[char:] + sentence[:char + 4]
 
-				if '\\' + 'xe2' + '\\' + 'x80' + '\\' + 'x94' in sentence:
-					loc = sentence.find('\\' + 'xe2' + '\\' + 'x80' + '\\' + 'x94')
-					sentence = sentence[:loc] + " - " + sentence[loc + 12:]
+	# 			if '\\' + 'xe2' + '\\' + 'x80' + '\\' + 'x94' in sentence:
+	# 				loc = sentence.find('\\' + 'xe2' + '\\' + 'x80' + '\\' + 'x94')
+	# 				sentence = sentence[:loc] + " - " + sentence[loc + 12:]
 
-				if '\\' + 'xe2' + '\\' + 'x80' + '\\' + 'x99' in sentence:
-					loc = sentence.find('\\' + 'xe2' + '\\' + 'x80' + '\\' + 'x99')
-					sentence = sentence[:loc] + "'" + sentence[loc + 12:]
+	# 			if '\\' + 'xe2' + '\\' + 'x80' + '\\' + 'x99' in sentence:
+	# 				loc = sentence.find('\\' + 'xe2' + '\\' + 'x80' + '\\' + 'x99')
+	# 				sentence = sentence[:loc] + "'" + sentence[loc + 12:]
 
 
-				summary.append(sentence)
-				#if 'xa0' in sentence:
-					#raise
+	# 			summary.append(sentence)
+	# 			#if 'xa0' in sentence:
+	# 				#raise
 
-			all_summaries.append(summary)
+	# 		all_summaries.append(summary)
 
-		except Exception as e:
-                    message = ["Could not retrieve summary for this posting. Please click apply to learn more."]
-                    print(e)
-                    all_summaries.append(message)
+	# 	except Exception as e:
+ #                    message = ["Could not retrieve summary for this posting. Please click apply to learn more."]
+ #                    print(e)
+ #                    all_summaries.append(message)
 
 	
 	#print(results)
