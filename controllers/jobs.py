@@ -51,12 +51,18 @@ def jobs_route_get():
 
 
     match_skills = []
+    match_pos = []
+    match_fields = []
 
     for desc in full_desc:
         skilz = findAllMatches(skills, desc)
+        positionz = findAllMatches(postype, desc)
+        fieldz = findAllMatches(fields, desc)
         match_skills.append(skilz)
+        match_pos.append(positionz)
+        match_fields.append(fieldz)
 
     print(match_skills)
 
-    return render_template("jobs.html", jobs=jobs, summaries=summaries, num=num, match_skills=match_skills, signedIn=True)
+    return render_template("jobs.html", jobs=jobs, summaries=summaries, num=num, match_skills=match_skills, match_pos=match_pos, match_fields=match_fields, signedIn=True)
 
