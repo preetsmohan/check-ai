@@ -9,7 +9,7 @@ If you're Sarthak, Brandon or Preeti, you can deploy the site. Instructions adap
 2. Ensure the following system files are as follows:
 
 
-/etc/systemd/system/checkai.service
+### /etc/systemd/system/checkai.service
 
 ```[Unit]
 Description=Gunicorn instance to serve myproject
@@ -26,7 +26,7 @@ ExecStart=/home/bwaggone/check-ai/venv/bin/gunicorn --workers 3 --bind unix:mypr
 WantedBy=multi-user.target
 ```
 
-/etc/nginx/sites-available/checkai
+### /etc/nginx/sites-available/checkai
 ```
 server {
     listen 80;
@@ -37,4 +37,27 @@ server {
         proxy_pass http://unix:/home/bwaggone/check-ai/checkai.sock;
     }
 }
+```
+These are the configuration files that will start the gunicorn service with the server. The next commands actually start the server. We should proooobably modify the source folders to not use my home directory but oh well
+
+3. Run the following commands to start the process
+```
+$ sudo systemctl start checkai
+$ sudo systemctl enable checkai
+```
+
+4. Connect the ngix process to sites enabled.
+```
+$ sudo ln -s /etc/nginx/sites-available/checkai /etc/nginx/sites-enabled
+```
+
+5. Check for errors and restart with,
+```
+$ sudo nginx -t
+$ sudo systemctl restart nginx
+```
+
+6. Just in case, make sure the firewall is configured to allow ngix through
+```
+$ sudo ufw allow 'Nginx Full'
 ```
