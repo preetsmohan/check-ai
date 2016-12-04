@@ -32,6 +32,11 @@ def login_post():
     else:
         return render_template('login.html')
 
+@app.route('/logout', methods=['POST'])
+def logout_post():
+    session.clear()
+    return redirect('/')
+
 def login_check(username, password):
     res = pref_sql("SELECT uid, password FROM user WHERE username = '{0}'", (username,))
     if res:
