@@ -2,6 +2,7 @@ from flask import *
 from config import app
 login = Blueprint('login', __name__, template_folder = 'views')
 from utils import *
+import hashlib
 
 @app.route('/signup', methods=['GET'])
 def signup_get():
@@ -10,7 +11,9 @@ def signup_get():
 
 @app.route('/signup', methods=['POST'])
 def signup_post():
-        pref_sql("INSERT INTO user (username, password) VALUES ('{0}', '{1}');", (request.form['username'], request.form['password']))
+        salt = 'dabbingsux'
+        hashed_pwd = hashlib.md5((request.form['password'] + salt).encode())
+        pref_sql("INSERT INTO user (username, password, email) VALUES ('{0}', '{1}', '{2}');", (request.form['username'], hashed_pwd.hexdigest(), request.form['email']))
         success = login_check(request.form['username'], request.form['password'])
         if success:
             return redirect('/preferences')
@@ -29,10 +32,16 @@ def login_post():
     else:
         return render_template('login.html')
 
+@app.route('/logout', methods=['POST'])
+def logout_post():
+    session.clear()
+    return redirect('/')
+
 def login_check(username, password):
     res = pref_sql("SELECT uid, password FROM user WHERE username = '{0}'", (username,))
     if res:
-        if(res[0][1] == password):
+        hashed_pwd = hashlib.md5((password + 'dabbingsux').encode())
+        if(res[0][1] == hashed_pwd.hexdigest()):
             session['username'] = request.form['username']
             session['uid'] = res[0][0]
             session['signedIn'] = True
