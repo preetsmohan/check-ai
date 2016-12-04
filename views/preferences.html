@@ -24,13 +24,13 @@
               {% for skill in skill_list %}
               <div class="input-field">
                 <a class="material-icons prefix" id="skill-{{loop.index}}-label" href="#" onClick="deletePref('skill-{{loop.index}}'); return false;">close</a>
-                <input id="skill-{{loop.index}}" type="text" placeholder='Skill' name="skillz" value = "{{skill}}">
+                <input id="skill-{{loop.index}}" type="text" placeholder='Preference' name="skillz" value = "{{skill}}">
               </div>
               {% endfor %}
             </div>
           </div>
           <div class="card-action">
-            <a href="#" type="button" value="+" onClick = "addInputs('skillz', 'text', 'Skill'); return false;">Add skill</a>
+            <a href="#" type="button" value="+" onClick = "addInputs('skillz', 'text', 'Preference'); return false;">Add Preference</a>
           </div>
         </div>
       </div>

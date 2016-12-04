@@ -11,13 +11,13 @@
             {% for i in range (0, num) %}
             <div class="card">
                 <div class="card-content black-text">
-                    <span class="card-title">{{jobs[i][0]}}</span>
+                    <span class="card-title"> <a target="_blank" href="{{jobs[i][1]}}">{{jobs[i][0]}}</a></span>
                     <div class="summary">
                       <h6 style="color: grey">{{summaries[i]}}</h6>
                   </div>
                   <div class="chip-container right-align">
                     {% for skill in match_skills[i] %}
-                    <div class="chip">
+                    <div class="chip blue lighten-4">
                         {{skill}}
                     </div>
                     {% endfor %}
