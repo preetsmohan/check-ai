@@ -16,6 +16,8 @@ function hideall(){
 
 function logout(){
 
-    $.post('/logout');
+    $.post('/logout', function(){
+        window.location = "/";
+    });
 
 }
