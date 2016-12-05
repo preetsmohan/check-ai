@@ -41,6 +41,8 @@
                     {% if signedIn %}
                     <li><a href="/preferences">Profile</a></li>
                     <li><a href="/jobs" onclick="hideall();">View Job Listings</a></li>
+                    <li><a onclick="logout();">Logout</a></li>
+
                     {% endif %}
                 </ul>
 
@@ -57,13 +59,13 @@
     </div>
 </div> -->
 
-    <!-- jQuery -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!-- jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
-    <!-- materialize js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-    <script type="text/javascript" src="/static/js/base.js"></script>
+<!-- materialize js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+<script type="text/javascript" src="/static/js/base.js"></script>
 
-    {% block javascript %}{% endblock %}
+{% block javascript %}{% endblock %}
 </body>
 </html>
