@@ -57,3 +57,7 @@ function showFab(){
     moveFab = false;
     // $('#save-fab').show();
 }
+
+function onSaveClicked(){
+    alert("Click 'View Job Listings' in the navigation bar to see your results.");
+}

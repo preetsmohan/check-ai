@@ -12,3 +12,12 @@ function hideall(){
 	// document.body.innerHTML += "<div style='display:flex;justify-content:center;align-items:center;'><div class='loader center'></div>"
 
 }
+
+
+function logout(){
+
+    $.post('/logout', function(){
+        window.location = "/";
+    });
+
+}
