@@ -3,12 +3,46 @@
 {% block head %}
 {{ super() }}
 <!-- Insert other stuff that goes in head here -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+<link rel="stylesheet" href="/static/css/about.css"/>
+
 {% endblock %}
 {% block content %}
 <div class="container">
-    <img src="static/img/logo.png" class="responsive-img center" style="padding-top: 5%; margin-left: 5%">
-    <div class="row center">
-        <h5 class="header col s12 light">Who we are</h5>
+    <h1 class="header center light"> About Check.ai</h1>
+    <p class="center"> Check.ai is the new way to search for jobs. Create an account, enter your preferences and let us deliver the most relevant jobs to you.</p>
+    <!--   Icon Section   -->
+    <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center blue-text"><i class="fa fa-search"></i></h2>
+            <h5 class="center">Search</h5>
+
+            <p class="light center">We do the complex searching for you. Cut down on that long typing and annoying searching.</p>
+        </div>
+    </div>
+
+    <div class="col s12 m4">
+      <div class="icon-block">
+        <h2 class="center blue-text"><i class="fa fa-hourglass-o"></i></h2>
+        <h5 class="center">Workshops &amp; Save Time</h5>
+
+        <p class="light center">Finding the right job is time consuming. We match your preferences to the job so you can take a glance and see what jobs are most relevant to you.</p>
     </div>
 </div>
+
+<div class="col s12 m4">
+  <div class="icon-block">
+    <h2 class="center blue-text"><i class="fa fa-floppy-o"></i></h2>
+    <h5 class="center">Saved Prefrences</h5>
+
+    <p class="light center">We save your preferences so you never have to keep retyping your qualifications. Updating your skills has never been easier!</p>
+</div>
+</div>
+
+
+</div>
+
+</div>
+
 {% endblock %}
