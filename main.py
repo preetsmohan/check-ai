@@ -10,6 +10,7 @@ app.register_blueprint(controllers.pref)
 app.register_blueprint(controllers.login)
 app.register_blueprint(controllers.jobs)
 app.register_blueprint(controllers.index)
+app.register_blueprint(controllers.about)
 
 
 if __name__ == "__main__":

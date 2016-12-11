@@ -4,3 +4,4 @@ from pref import *
 from login import *
 from jobs import *
 from index import *
+from about import *
